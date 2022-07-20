@@ -1,0 +1,40 @@
+CHIP aux36
+{
+	IN t,ih[16],il[16];
+	OUT a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,tt,u,v,w,x,y,z,aa,ab,ac,ad,ae,af;
+PARTS:	
+
+	Bit(in=il[0], load=t,out=a);
+	Bit(in=il[1], load=t,out=b);
+	Bit(in=il[2], load=t,out=c);
+	Bit(in=il[3], load=t,out=d);
+	Bit(in=il[4], load=t,out=e);
+	Bit(in=il[5], load=t,out=f);
+	Bit(in=il[6], load=t,out=g);
+	Bit(in=il[7], load=t,out=h);
+	Bit(in=il[8], load=t,out=i);
+	Bit(in=il[9], load=t,out=j);
+	Bit(in=il[10], load=t,out=k);
+	Bit(in=il[11], load=t,out=l);
+	Bit(in=il[12], load=t,out=m);
+	Bit(in=il[13], load=t,out=n);
+	Bit(in=il[14], load=t,out=o);
+	Bit(in=il[15], load=t,out=p);
+
+	Bit(in=ih[0],load=t,out=q);
+	Bit(in=ih[1],load=t,out=r);
+	Bit(in=ih[2],load=t,out=s);
+	Bit(in=ih[3],load=t,out=tt);
+	Bit(in=ih[4],load=t,out=u);
+	Bit(in=ih[5],load=t,out=v);
+	Bit(in=ih[6],load=t,out=w);
+	Bit(in=ih[7],load=t,out=x);
+	Bit(in=ih[8],load=t,out=y);
+	Bit(in=ih[9],load=t,out=z);
+	Bit(in=ih[10],load=t,out=aa);
+	Bit(in=ih[11],load=t,out=ab);
+	Bit(in=ih[12],load=t,out=ac);
+	Bit(in=ih[13],load=t,out=ad);
+	Bit(in=ih[14],load=t,out=ae);
+	Bit(in=ih[15],load=t,out=af);
+}

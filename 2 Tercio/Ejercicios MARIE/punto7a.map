@@ -1,0 +1,22 @@
+ --------------------
+ Symbol    | Location
+ ----------+---------
+ A         |   03A
+ B         |   03B
+ C         |   03C
+ I         |   03E
+ J         |   03F
+ ONE       |   040
+ W         |   044
+ Y         |   042
+ Z         |   043
+ ZERO      |   041
+ endwhile  |   016
+ endwhilea |   025
+ endwhileb |   034
+ s         |   03D
+ while     |   00B
+ whilea    |   01A
+ whileb    |   029
+ x         |   039
+

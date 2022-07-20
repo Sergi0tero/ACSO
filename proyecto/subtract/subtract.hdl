@@ -1,0 +1,10 @@
+
+
+CHIP subtract {
+    IN ah[16],al[16],bh[16],bl[16];
+    OUT ch[16],cl[16];
+
+	 PARTS:
+    complement2(ah=bh,al=bl,bh=i,bl=j);
+    add(ah=ah,al=al,bh=i,bl=j,ch=ch,cl=cl);
+}

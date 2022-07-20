@@ -1,0 +1,108 @@
+     Assembly listing for: punto7a.mas
+                Assembled: Thu Oct 21 20:30:27 COT 2021
+
+000 5000 |            INPUT                
+001 203A |            STORE A              
+002 5000 |            INPUT                
+003 203B |            STORE B              
+004 5000 |            INPUT                
+005 203C |            STORE C              
+006 5000 |            INPUT                
+007 2039 |            STORE x              
+         |                                /                               
+         |                                /x*x
+008 1041 |            LOAD ZERO            
+009 203E |            STORE I              
+00A 2042 |            STORE Y              
+00B 103E |  while     LOAD I               
+00C 4039 |            SUBT x               
+00D 8000 |            SKIPCOND 000        /i < x?
+00E 9016 |            JUMP endwhile        
+00F 1042 |            LOAD Y               
+010 3039 |            ADD x                
+011 2042 |            STORE Y              
+012 103E |            LOAD I               
+013 3040 |            ADD ONE              
+014 203E |            STORE I              
+015 900B |            JUMP while           
+016 1042 |  endwhile  LOAD Y               
+         |                                /a*X ^ 2
+         |                                		
+017 1041 |            LOAD ZERO            
+018 203E |            STORE I              
+019 2043 |            STORE Z              
+01A 103E |  whilea    LOAD I               
+01B 4042 |            SUBT Y               
+01C 8000 |            SKIPCOND 000        /i < Y?
+01D 9025 |            JUMP endwhilea       
+01E 1043 |            LOAD Z               
+01F 303A |            ADD A                
+020 2043 |            STORE Z              
+021 103E |            LOAD I               
+022 3040 |            ADD ONE              
+023 203E |            STORE I              
+024 901A |            JUMP whilea          
+025 1043 |  endwhilea LOAD Z               
+         |                                / b * X
+026 1041 |            LOAD ZERO            
+027 203E |            STORE I              
+028 2044 |            STORE W              
+029 103E |  whileb    LOAD I               
+02A 4039 |            SUBT x               
+02B 8000 |            SKIPCOND 000        /i < x?
+02C 9034 |            JUMP endwhileb       
+02D 1044 |            LOAD W               
+02E 303B |            ADD B                
+02F 2044 |            STORE W              
+030 103E |            LOAD I               
+031 3040 |            ADD ONE              
+032 203E |            STORE I              
+033 9029 |            JUMP whileb          
+034 1044 |  endwhileb LOAD W               
+         |                                /a*X ^ 2 + b * X
+035 3043 |            ADD Z                
+         |                                /a * X ^ 2 + b * X + c
+036 303C |            ADD C                
+037 6000 |            OUTPUT               
+038 7000 |            HALT                 
+039 0000 |  x         DEC 0                
+03A 0000 |  A         DEC 0                
+03B 0000 |  B         DEC 0                
+03C 0000 |  C         DEC 0                
+03D 0000 |  s         DEC 0                
+03E 0000 |  I         DEC 0                
+03F 0000 |  J         DEC 0                
+040 0001 |  ONE       DEC 1                
+041 0000 |  ZERO      DEC 0                
+042 0000 |  Y         DEC 0                
+043 0000 |  Z         DEC 0                
+044 0000 |  W         DEC 0                
+
+Assembly successful.
+
+         SYMBOL TABLE
+         -----------------------------------------------------
+          Symbol    | Defined | References 
+         -----------+---------+-------------------------------
+          A         |   03A   | 001, 01F
+          B         |   03B   | 003, 02E
+          C         |   03C   | 005, 036
+          I         |   03E   | 009, 00B, 012, 014, 018, 01A, 
+                    |         | 021, 023, 027, 029, 030, 032
+          J         |   03F   | 
+          ONE       |   040   | 013, 022, 031
+          W         |   044   | 028, 02D, 02F, 034
+          Y         |   042   | 00A, 00F, 011, 016, 01B
+          Z         |   043   | 019, 01E, 020, 025, 035
+          ZERO      |   041   | 008, 017, 026
+          endwhile  |   016   | 00E
+          endwhilea |   025   | 01D
+          endwhileb |   034   | 02C
+          s         |   03D   | 
+          while     |   00B   | 015
+          whilea    |   01A   | 024
+          whileb    |   029   | 033
+          x         |   039   | 007, 00C, 010, 02A
+         -----------------------------------------------------
+
+

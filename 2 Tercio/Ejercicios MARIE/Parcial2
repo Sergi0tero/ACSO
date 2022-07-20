@@ -1,0 +1,24 @@
+Input
+			Store    	X
+			Load    	X
+			Subt    	ONE
+			Skipcond    800
+			Jump        endif
+			Jump        if
+if,    		Load     	X
+			Subt    	TEN
+			Skipcond    000
+			Jump        endif
+			Jump        if2
+if2,    	Load    	X
+			Add        	X
+			Store    	Y
+			Jump    	endif
+endif,    	Load    	Y
+			Output
+			Halt
+
+X,        	Dec        0
+Y,        	Dec        5
+ONE,    	Dec        1
+TEN,    	Dec        10

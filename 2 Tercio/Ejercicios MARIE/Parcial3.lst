@@ -1,0 +1,44 @@
+     Assembly listing for: Parcial3.mas
+                Assembled: Tue Oct 26 11:24:24 COT 2021
+
+000 5000 |         INPUT             
+001 2013 |         STORE X           
+002 1013 |         LOAD X            
+003 4015 |         SUBT ONEH         
+004 8000 |         SKIPCOND 000      
+005 9010 |         JUMP endif        
+006 9007 |         JUMP if           
+007 1013 |  if     LOAD X            
+008 4016 |         SUBT TEN          
+009 8400 |         SKIPCOND 400      
+00A 9010 |         JUMP endif        
+00B 900C |         JUMP if2          
+00C 1013 |  if2    LOAD X            
+00D 3013 |         ADD X             
+00E 2014 |         STORE Y           
+00F 9010 |         JUMP endif        
+010 1014 |  endif  LOAD Y            
+011 6000 |         OUTPUT            
+012 7000 |         HALT              
+         |                          
+013 0000 |  X      DEC 0             
+014 0003 |  Y      DEC 3             
+015 0064 |  ONEH   DEC 100           
+016 000A |  TEN    DEC 10            
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          ONEH   |   015   | 003
+          TEN    |   016   | 008
+          X      |   013   | 001, 002, 007, 00C, 00D
+          Y      |   014   | 00E, 010
+          endif  |   010   | 005, 00A, 00F
+          if     |   007   | 006
+          if2    |   00C   | 00B
+         --------------------------------------------------
+
+

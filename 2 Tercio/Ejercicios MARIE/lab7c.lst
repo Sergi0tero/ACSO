@@ -1,0 +1,309 @@
+     Assembly listing for: lab7c.mas
+                Assembled: Mon Nov 01 19:42:06 COT 2021
+
+000 A000 |                 CLEAR                     
+001 5000 |                 INPUT                     
+002 2033 |                 STORE A                   
+003 1033 |                 LOAD A                    
+004 8400 |  for            SKIPCOND 400              
+005 9007 |                 JUMP for_body             
+006 902C |                 JUMP end_for              
+007 1033 |  for_body       LOAD A                    
+008 4032 |                 SUBT ONE                  
+009 2033 |                 STORE A                   
+00A 5000 |                 INPUT                     
+00B 2034 |                 STORE AN                  
+00C 5000 |                 INPUT                     
+00D 2035 |                 STORE AD                  
+         |                                          				
+00E 1034 |                 LOAD AN                   
+00F 2098 |                 STORE MCD_A               
+010 1035 |                 LOAD AD                   
+011 2099 |                 STORE MCD_B               
+012 007B |                 JNS mcd                   
+013 2038 |                 STORE M                   
+         |                                          				
+014 1034 |                 LOAD AN                   
+015 20AE |                 STORE DIV_A               
+016 1038 |                 LOAD M                    
+017 20AF |                 STORE DIV_B               
+018 009D |                 JNS div                   
+019 2034 |                 STORE AN                  
+         |                                          				
+01A 1035 |                 LOAD AD                   
+01B 20AE |                 STORE DIV_A               
+01C 1038 |                 LOAD M                    
+01D 20AF |                 STORE DIV_B               
+01E 009D |                 JNS div                   
+01F 2035 |                 STORE AD                  
+         |                                          				
+020 1034 |                 LOAD AN                   
+021 2074 |                 STORE EGY_A               
+022 1035 |                 LOAD AD                   
+023 2075 |                 STORE EGY_B               
+024 0039 |                 JNS egy                   
+025 2036 |                 STORE R                   
+026 1036 |                 LOAD R                    
+027 6000 |                 OUTPUT                    
+028 1037 |                 LOAD ZERO                 
+029 6000 |                 OUTPUT                    
+02A 1033 |                 LOAD A                    
+02B 9004 |                 JUMP for                  
+02C A000 |  end_for        CLEAR                     
+02D 2033 |                 STORE A                   
+02E 2034 |                 STORE AN                  
+02F 2035 |                 STORE AD                  
+030 2036 |                 STORE R                   
+031 7000 |                 HALT                      
+         |                                          				
+032 0001 |  ONE            DEC 1                     
+033 0000 |  A              DEC 0                     
+034 0000 |  AN             DEC 0                     
+035 0000 |  AD             DEC 0                     
+036 0000 |  R              DEC 0                     
+037 0000 |  ZERO           DEC 0                     
+038 0000 |  M              DEC 0                     
+         |                                          
+         |                                          
+         |                                          / EGY
+039 0000 |  egy            DEC 0                     
+03A A000 |                 CLEAR                     
+03B 1075 |  egy_while      LOAD EGY_B                
+03C 20BD |                 STORE MOD_A               
+03D 1074 |                 LOAD EGY_A                
+03E 20BE |                 STORE MOD_B               
+03F 00B1 |                 JNS mod                   
+040 2076 |                 STORE R_EG                
+041 1076 |                 LOAD R_EG                 
+042 8400 |                 SKIPCOND 400              
+043 9045 |                 JUMP egy_while_body       
+044 9072 |                 JUMP egy_end_while        
+045 1075 |  egy_while_body LOAD EGY_B                
+046 20AE |                 STORE DIV_A               
+047 1074 |                 LOAD EGY_A                
+048 20AF |                 STORE DIV_B               
+049 009D |                 JNS div                   
+04A 207A |                 STORE D_EGY               
+         |                                          
+04B 107A |                 LOAD D_EGY                
+04C 3032 |                 ADD ONE                   
+04D 207A |                 STORE D_EGY               
+04E 107A |                 LOAD D_EGY                
+04F 6000 |                 OUTPUT                    
+         |                                          			
+050 1074 |                 LOAD EGY_A                
+051 20D0 |                 STORE MUL_A               
+052 107A |                 LOAD D_EGY                
+053 20D1 |                 STORE MUL_B               
+054 00BF |                 JNS mul                   
+055 2077 |                 STORE M_N                 
+         |                                          				
+056 1077 |                 LOAD M_N                  
+057 4075 |                 SUBT EGY_B                
+058 2077 |                 STORE M_N                 
+         |                                          				
+059 1075 |                 LOAD EGY_B                
+05A 20D0 |                 STORE MUL_A               
+05B 107A |                 LOAD D_EGY                
+05C 20D1 |                 STORE MUL_B               
+05D 00BF |                 JNS mul                   
+05E 2078 |                 STORE M_D                 
+         |                                          		
+05F 1078 |                 LOAD M_D                  
+060 2098 |                 STORE MCD_A               
+061 1077 |                 LOAD M_N                  
+062 2099 |                 STORE MCD_B               
+063 007B |                 JNS mcd                   
+064 2079 |                 STORE DIV_E               
+         |                                          		
+065 1077 |                 LOAD M_N                  
+066 20AE |                 STORE DIV_A               
+067 1079 |                 LOAD DIV_E                
+068 20AF |                 STORE DIV_B               
+069 009D |                 JNS div                   
+06A 2074 |                 STORE EGY_A               
+         |                                          			
+06B 1078 |                 LOAD M_D                  
+06C 20AE |                 STORE DIV_A               
+06D 1079 |                 LOAD DIV_E                
+06E 20AF |                 STORE DIV_B               
+06F 009D |                 JNS div                   
+070 2075 |                 STORE EGY_B               
+         |                                          				
+071 903B |                 JUMP egy_while            
+072 1075 |  egy_end_while  LOAD EGY_B                
+073 C039 |                 JUMPI egy                 
+074 0000 |  EGY_A          DEC 0                     
+075 0000 |  EGY_B          DEC 0                     
+076 0000 |  R_EG           DEC 0                     
+077 0000 |  M_N            DEC 0                     
+078 0000 |  M_D            DEC 0                     
+079 0000 |  DIV_E          DEC 0                     
+07A 0000 |  D_EGY          DEC 0                     
+         |                                          				
+         |                                          
+         |                                          
+         |                                          /MCD
+07B 0000 |  mcd            DEC 0                     
+07C A000 |                 CLEAR                     
+07D 1098 |                 LOAD MCD_A                
+07E 20BD |                 STORE MOD_A               
+07F 1099 |                 LOAD MCD_B                
+080 20BE |                 STORE MOD_B               
+081 00B1 |                 JNS mod                   
+082 209B |                 STORE RES                 
+083 1099 |                 LOAD MCD_B                
+084 209C |                 STORE NUM                 
+085 109B |  mcd_while      LOAD RES                  
+086 8400 |                 SKIPCOND 400              
+087 9089 |                 JUMP mcd_while_body       
+088 9094 |                 JUMP mcd_end_while        
+089 109C |  mcd_while_body LOAD NUM                  
+08A 209A |                 STORE MCD                 
+08B 109B |                 LOAD RES                  
+08C 209C |                 STORE NUM                 
+08D 109A |                 LOAD MCD                  
+08E 20BD |                 STORE MOD_A               
+08F 109C |                 LOAD NUM                  
+090 20BE |                 STORE MOD_B               
+091 00B1 |                 JNS mod                   
+092 209B |                 STORE RES                 
+093 9085 |                 JUMP mcd_while            
+094 109C |  mcd_end_while  LOAD NUM                  
+095 209A |                 STORE MCD                 
+096 109A |                 LOAD MCD                  
+097 C07B |                 JUMPI mcd                 
+098 0000 |  MCD_A          DEC 0                     
+099 0000 |  MCD_B          DEC 0                     
+09A 0000 |  MCD            DEC 0                     
+09B 0000 |  RES            DEC 0                     
+09C 0000 |  NUM            DEC 0                     
+         |                                          
+         |                                          
+         |                                          /DIV
+09D 0000 |  div            DEC 0                     
+09E A000 |                 CLEAR                     
+09F 20B0 |                 STORE DIV_D               
+0A0 10AE |  div_while      LOAD DIV_A                
+0A1 40AF |                 SUBT DIV_B                
+0A2 8000 |                 SKIPCOND 000              
+0A3 90A5 |                 JUMP div_whilebody        
+0A4 90AC |                 JUMP div_endwhile         
+0A5 10AE |  div_whilebody  LOAD DIV_A                
+0A6 40AF |                 SUBT DIV_B                
+0A7 20AE |                 STORE DIV_A               
+0A8 10B0 |                 LOAD DIV_D                
+0A9 3032 |                 ADD ONE                   
+0AA 20B0 |                 STORE DIV_D               
+0AB 90A0 |                 JUMP div_while            
+0AC 10B0 |  div_endwhile   LOAD DIV_D                
+0AD C09D |                 JUMPI div                 
+0AE 0000 |  DIV_A          DEC 0                     
+0AF 0000 |  DIV_B          DEC 0                     
+0B0 0000 |  DIV_D          DEC 0                     
+         |                                          
+         |                                          
+         |                                          /MOD
+0B1 0000 |  mod            DEC 0                     
+0B2 10BD |  mod_while      LOAD MOD_A                
+0B3 40BE |                 SUBT MOD_B                
+0B4 8000 |                 SKIPCOND 000              
+0B5 90B7 |                 JUMP mod_whilebody        
+0B6 90BB |                 JUMP mod_endwhile         
+0B7 10BD |  mod_whilebody  LOAD MOD_A                
+0B8 40BE |                 SUBT MOD_B                
+0B9 20BD |                 STORE MOD_A               
+0BA 90B2 |                 JUMP mod_while            
+0BB 10BD |  mod_endwhile   LOAD MOD_A                
+         |                                          		/Output
+0BC C0B1 |                 JUMPI mod                 
+0BD 0000 |  MOD_A          DEC 0                     
+0BE 0000 |  MOD_B          DEC 0                     
+         |                                          
+         |                                          
+         |                                          /MUL
+0BF 0000 |  mul            DEC 0                     
+0C0 A000 |                 CLEAR                     
+0C1 20D2 |                 STORE MUL_I               
+0C2 20D3 |                 STORE MUL_M               
+0C3 10D2 |  mul_while      LOAD MUL_I                
+0C4 40D1 |                 SUBT MUL_B                
+0C5 8000 |                 SKIPCOND 000              
+0C6 90CE |                 JUMP mul_endwhile         
+0C7 10D3 |                 LOAD MUL_M                
+0C8 30D0 |                 ADD MUL_A                 
+0C9 20D3 |                 STORE MUL_M               
+0CA 10D2 |                 LOAD MUL_I                
+0CB 3032 |                 ADD ONE                   
+0CC 20D2 |                 STORE MUL_I               
+0CD 90C3 |                 JUMP mul_while            
+0CE 10D3 |  mul_endwhile   LOAD MUL_M                
+0CF C0BF |                 JUMPI mul                 
+0D0 0000 |  MUL_A          DEC 0                     
+0D1 0000 |  MUL_B          DEC 0                     
+0D2 0000 |  MUL_I          DEC 0                     
+0D3 0000 |  MUL_M          DEC 0                     
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ----------------------------------------------------------
+          Symbol         | Defined | References 
+         ----------------+---------+-------------------------------
+          A              |   033   | 002, 003, 007, 009, 02A, 02D
+          AD             |   035   | 00D, 010, 01A, 01F, 022, 02F
+          AN             |   034   | 00B, 00E, 014, 019, 020, 02E
+          DIV_A          |   0AE   | 015, 01B, 046, 066, 06C, 0A0, 
+                         |         | 0A5, 0A7
+          DIV_B          |   0AF   | 017, 01D, 048, 068, 06E, 0A1, 
+                         |         | 0A6
+          DIV_D          |   0B0   | 09F, 0A8, 0AA, 0AC
+          DIV_E          |   079   | 064, 067, 06D
+          D_EGY          |   07A   | 04A, 04B, 04D, 04E, 052, 05B
+          EGY_A          |   074   | 021, 03D, 047, 050, 06A
+          EGY_B          |   075   | 023, 03B, 045, 057, 059, 070, 
+                         |         | 072
+          M              |   038   | 013, 016, 01C
+          MCD            |   09A   | 08A, 08D, 095, 096
+          MCD_A          |   098   | 00F, 060, 07D
+          MCD_B          |   099   | 011, 062, 07F, 083
+          MOD_A          |   0BD   | 03C, 07E, 08E, 0B2, 0B7, 0B9, 
+                         |         | 0BB
+          MOD_B          |   0BE   | 03E, 080, 090, 0B3, 0B8
+          MUL_A          |   0D0   | 051, 05A, 0C8
+          MUL_B          |   0D1   | 053, 05C, 0C4
+          MUL_I          |   0D2   | 0C1, 0C3, 0CA, 0CC
+          MUL_M          |   0D3   | 0C2, 0C7, 0C9, 0CE
+          M_D            |   078   | 05E, 05F, 06B
+          M_N            |   077   | 055, 056, 058, 061, 065
+          NUM            |   09C   | 084, 089, 08C, 08F, 094
+          ONE            |   032   | 008, 04C, 0A9, 0CB
+          R              |   036   | 025, 026, 030
+          RES            |   09B   | 082, 085, 08B, 092
+          R_EG           |   076   | 040, 041
+          ZERO           |   037   | 028
+          div            |   09D   | 018, 01E, 049, 069, 06F, 0AD
+          div_endwhile   |   0AC   | 0A4
+          div_while      |   0A0   | 0AB
+          div_whilebody  |   0A5   | 0A3
+          egy            |   039   | 024, 073
+          egy_end_while  |   072   | 044
+          egy_while      |   03B   | 071
+          egy_while_body |   045   | 043
+          end_for        |   02C   | 006
+          for            |   004   | 02B
+          for_body       |   007   | 005
+          mcd            |   07B   | 012, 063, 097
+          mcd_end_while  |   094   | 088
+          mcd_while      |   085   | 093
+          mcd_while_body |   089   | 087
+          mod            |   0B1   | 03F, 081, 091, 0BC
+          mod_endwhile   |   0BB   | 0B6
+          mod_while      |   0B2   | 0BA
+          mod_whilebody  |   0B7   | 0B5
+          mul            |   0BF   | 054, 05D, 0CF
+          mul_endwhile   |   0CE   | 0C6
+          mul_while      |   0C3   | 0CD
+         ----------------------------------------------------------
+
+

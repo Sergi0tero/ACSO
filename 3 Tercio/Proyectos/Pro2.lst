@@ -1,0 +1,316 @@
+     Assembly listing for: Pro2.mas
+                Assembled: Fri Dec 10 16:21:22 COT 2021
+
+000 5000 |               INPUT                   
+001 2036 |               STORE LEN               
+002 2035 |               STORE CI                
+003 5000 |  while_m      INPUT                   
+004 E031 |               STOREI V1               
+005 5000 |               INPUT                   
+006 E032 |               STOREI V2               
+007 1031 |               LOAD V1                 
+008 3071 |               ADD ONE                 
+009 2031 |               STORE V1                
+00A 1032 |               LOAD V2                 
+00B 3071 |               ADD ONE                 
+00C 2032 |               STORE V2                
+00D 1035 |               LOAD CI                 
+00E 4071 |               SUBT ONE                
+00F 2035 |               STORE CI                
+010 8400 |               SKIPCOND 400            
+011 9003 |               JUMP while_m            
+012 0037 |               JNS max                 
+013 2070 |               STORE CANT              
+014 208E |               STORE IT                
+015 004F |               JNS vector              
+016 0074 |               JNS criba               
+         |                                      
+017 102F |               LOAD P1                 
+018 2031 |               STORE V1                
+019 1030 |               LOAD P2                 
+01A 2032 |               STORE V2                
+01B 1036 |               LOAD LEN                
+01C 2035 |               STORE CI                
+01D D031 |  while_l      LOADI V1                
+01E 2034 |               STORE LI                
+01F D032 |               LOADI V2                
+020 2033 |               STORE LS                
+021 00B3 |               JNS num                 
+022 6000 |               OUTPUT                  
+023 1031 |               LOAD V1                 
+024 3071 |               ADD ONE                 
+025 2031 |               STORE V1                
+026 1032 |               LOAD V2                 
+027 3071 |               ADD ONE                 
+028 2032 |               STORE V2                
+029 1035 |               LOAD CI                 
+02A 4071 |               SUBT ONE                
+02B 2035 |               STORE CI                
+02C 8400 |               SKIPCOND 400            
+02D 901D |               JUMP while_l            
+02E 7000 |               HALT                    
+02F 00F0 |  P1           HEX 0F0                 
+030 0100 |  P2           HEX 100                 
+031 00F0 |  V1           HEX 0F0                 
+032 0100 |  V2           HEX 100                 
+033 0000 |  LS           DEC 0                   
+034 0000 |  LI           DEC 0                   
+035 0000 |  CI           DEC 0                   
+036 0000 |  LEN          DEC 0                   
+         |                                      
+         |                                      
+         |                                      
+037 0000 |  max          DEC 0                   
+038 1073 |               LOAD ZERO               
+039 204E |               STORE M_max             
+03A 1030 |               LOAD P2                 
+03B 2032 |               STORE V2                
+03C 1036 |               LOAD LEN                
+03D 2035 |               STORE CI                
+03E D032 |  for_m        LOADI V2                
+03F 404E |               SUBT M_max              
+040 8800 |               SKIPCOND 800            
+041 9044 |               JUMP for_mbody          
+042 D032 |               LOADI V2                
+043 204E |               STORE M_max             
+044 1032 |  for_mbody    LOAD V2                 
+045 3071 |               ADD ONE                 
+046 2032 |               STORE V2                
+047 1035 |               LOAD CI                 
+048 4071 |               SUBT ONE                
+049 2035 |               STORE CI                
+04A 8400 |               SKIPCOND 400            
+04B 903E |               JUMP for_m              
+04C 104E |               LOAD M_max              
+04D C037 |               JUMPI max               
+04E 0000 |  M_max        DEC 0                   
+         |                                      
+         |                                      
+04F 0000 |  vector       DEC 0                   
+050 106F |               LOAD POS                
+051 2072 |               STORE I                 
+052 106E |               LOAD TWO                
+053 206C |               STORE A                 
+054 106C |  for          LOAD A                  
+055 8800 |  while_v      SKIPCOND 800            
+056 1073 |               LOAD ZERO               
+057 E072 |               STOREI I                
+058 106C |               LOAD A                  
+059 3071 |               ADD ONE                 
+05A 206C |               STORE A                 
+05B 1072 |               LOAD I                  
+05C 3071 |               ADD ONE                 
+05D 2072 |               STORE I                 
+05E 106B |               LOAD PAR                
+05F 3071 |               ADD ONE                 
+060 206B |               STORE PAR               
+061 406E |               SUBT TWO                
+062 8400 |               SKIPCOND 400            
+063 9066 |               JUMP continue           
+064 206B |               STORE PAR               
+065 9055 |               JUMP while_v            
+066 1070 |  continue     LOAD CANT               
+067 406C |               SUBT A                  
+068 8000 |               SKIPCOND 000            
+069 9054 |               JUMP for                
+06A C04F |               JUMPI vector            
+         |                                      
+06B 0000 |  PAR          DEC 0                   
+06C 0002 |  A            DEC 2                   
+06D 000A |  B            DEC 10                  
+06E 0002 |  TWO          DEC 2                   
+06F 0200 |  POS          HEX 200                 
+070 0000 |  CANT         DEC 0                   
+071 0001 |  ONE          DEC 1                   
+072 0000 |  I            HEX 0                   
+073 0000 |  ZERO         DEC 0                   
+         |                                      
+074 0000 |  criba        DEC 0                   
+075 106F |               LOAD POS                
+076 3071 |               ADD ONE                 
+077 2072 |               STORE I                 
+078 308E |               ADD IT                  
+079 4071 |               SUBT ONE                
+07A 208E |               STORE IT                
+07B D072 |  ciclo        LOADI I                 
+07C 20B2 |               STORE MOD_B             
+07D 20E0 |               STORE MUL_A             
+07E 20E1 |               STORE MUL_B             
+07F 00CF |               JNS mul                 
+080 4070 |               SUBT CANT               
+081 8000 |               SKIPCOND 000            
+082 908D |               JUMP end_c              
+083 10B2 |               LOAD MOD_B              
+084 8400 |               SKIPCOND 400            
+085 008F |               JNS loop                
+086 1072 |  else_c       LOAD I                  
+087 3071 |               ADD ONE                 
+088 2072 |               STORE I                 
+089 108E |               LOAD IT                 
+08A 4072 |               SUBT I                  
+08B 8400 |               SKIPCOND 400            
+08C 907B |               JUMP ciclo              
+08D C074 |  end_c        JUMPI criba             
+08E 0000 |  IT           DEC 0                   
+         |                                      
+08F 0000 |  loop         DEC 0                   
+090 1072 |               LOAD I                  
+091 3071 |               ADD ONE                 
+092 20A2 |               STORE J                 
+093 106F |               LOAD POS                
+094 3070 |               ADD CANT                
+095 20A3 |               STORE loop_i            
+096 D0A2 |  for_d        LOADI J                 
+097 20B1 |               STORE MOD_A             
+098 00A5 |               JNS mod                 
+099 8800 |               SKIPCOND 800            
+09A E0A2 |               STOREI J                
+09B 10A2 |               LOAD J                  
+09C 3071 |               ADD ONE                 
+09D 20A2 |               STORE J                 
+09E 40A3 |               SUBT loop_i             
+09F 8400 |               SKIPCOND 400            
+0A0 9096 |               JUMP for_d              
+0A1 C08F |               JUMPI loop              
+0A2 0000 |  J            DEC 0                   
+0A3 0000 |  loop_i       DEC 0                   
+0A4 0003 |  THREE        DEC 3                   
+         |                                      
+0A5 0000 |  mod          DEC 0                   
+0A6 10B1 |  while        LOAD MOD_A              
+0A7 40B2 |               SUBT MOD_B              
+0A8 3071 |               ADD ONE                 
+0A9 8800 |               SKIPCOND 800            
+0AA 90AF |               JUMP endwhile           
+0AB 10B1 |               LOAD MOD_A              
+0AC 40B2 |               SUBT MOD_B              
+0AD 20B1 |               STORE MOD_A             
+0AE 90A6 |               JUMP while              
+0AF 10B1 |  endwhile     LOAD MOD_A              
+0B0 C0A5 |               JUMPI mod               
+0B1 0000 |  MOD_A        DEC 0                   
+0B2 0000 |  MOD_B        DEC 0                   
+         |                                      
+0B3 0000 |  num          DEC 0                   
+0B4 1073 |               LOAD ZERO               
+0B5 20CE |               STORE CANT_n            
+0B6 106F |               LOAD POS                
+0B7 3034 |               ADD LI                  
+0B8 406E |               SUBT TWO                
+0B9 20CC |               STORE I_num             
+0BA 106F |               LOAD POS                
+0BB 3033 |               ADD LS                  
+0BC 4071 |               SUBT ONE                
+0BD 20CD |               STORE J_num             
+0BE D0CC |  for_n        LOADI I_num             
+0BF 8800 |               SKIPCOND 800            
+0C0 90C4 |               JUMP else_n             
+0C1 1071 |               LOAD ONE                
+0C2 30CE |               ADD CANT_n              
+0C3 20CE |               STORE CANT_n            
+0C4 10CC |  else_n       LOAD I_num              
+0C5 3071 |               ADD ONE                 
+0C6 20CC |               STORE I_num             
+0C7 40CD |               SUBT J_num              
+0C8 8400 |               SKIPCOND 400            
+0C9 90BE |               JUMP for_n              
+0CA 10CE |               LOAD CANT_n             
+0CB C0B3 |               JUMPI num               
+0CC 0000 |  I_num        DEC 0                   
+0CD 0000 |  J_num        DEC 0                   
+0CE 0000 |  CANT_n       DEC 0                   
+         |                                      
+         |                                      
+0CF 0000 |  mul          DEC 0                   
+0D0 A000 |               CLEAR                   
+0D1 20E2 |               STORE MUL_I             
+0D2 20E3 |               STORE MUL_M             
+0D3 10E2 |  mul_while    LOAD MUL_I              
+0D4 40E1 |               SUBT MUL_B              
+0D5 8000 |               SKIPCOND 000            
+0D6 90DE |               JUMP mul_endwhile       
+0D7 10E3 |               LOAD MUL_M              
+0D8 30E0 |               ADD MUL_A               
+0D9 20E3 |               STORE MUL_M             
+0DA 10E2 |               LOAD MUL_I              
+0DB 3071 |               ADD ONE                 
+0DC 20E2 |               STORE MUL_I             
+0DD 90D3 |               JUMP mul_while          
+0DE 10E3 |  mul_endwhile LOAD MUL_M              
+0DF C0CF |               JUMPI mul               
+0E0 0000 |  MUL_A        DEC 0                   
+0E1 0000 |  MUL_B        DEC 0                   
+0E2 0000 |  MUL_I        DEC 0                   
+0E3 0000 |  MUL_M        DEC 0                   
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------------
+          Symbol       | Defined | References 
+         --------------+---------+-------------------------------
+          A            |   06C   | 053, 054, 058, 05A, 067
+          B            |   06D   | 
+          CANT         |   070   | 013, 066, 080, 094
+          CANT_n       |   0CE   | 0B5, 0C2, 0C3, 0CA
+          CI           |   035   | 002, 00D, 00F, 01C, 029, 02B, 
+                       |         | 03D, 047, 049
+          I            |   072   | 051, 057, 05B, 05D, 077, 07B, 
+                       |         | 086, 088, 08A, 090
+          IT           |   08E   | 014, 078, 07A, 089
+          I_num        |   0CC   | 0B9, 0BE, 0C4, 0C6
+          J            |   0A2   | 092, 096, 09A, 09B, 09D
+          J_num        |   0CD   | 0BD, 0C7
+          LEN          |   036   | 001, 01B, 03C
+          LI           |   034   | 01E, 0B7
+          LS           |   033   | 020, 0BB
+          MOD_A        |   0B1   | 097, 0A6, 0AB, 0AD, 0AF
+          MOD_B        |   0B2   | 07C, 083, 0A7, 0AC
+          MUL_A        |   0E0   | 07D, 0D8
+          MUL_B        |   0E1   | 07E, 0D4
+          MUL_I        |   0E2   | 0D1, 0D3, 0DA, 0DC
+          MUL_M        |   0E3   | 0D2, 0D7, 0D9, 0DE
+          M_max        |   04E   | 039, 03F, 043, 04C
+          ONE          |   071   | 008, 00B, 00E, 024, 027, 02A, 
+                       |         | 045, 048, 059, 05C, 05F, 076, 
+                       |         | 079, 087, 091, 09C, 0A8, 0BC, 
+                       |         | 0C1, 0C5, 0DB
+          P1           |   02F   | 017
+          P2           |   030   | 019, 03A
+          PAR          |   06B   | 05E, 060, 064
+          POS          |   06F   | 050, 075, 093, 0B6, 0BA
+          THREE        |   0A4   | 
+          TWO          |   06E   | 052, 061, 0B8
+          V1           |   031   | 004, 007, 009, 018, 01D, 023, 
+                       |         | 025
+          V2           |   032   | 006, 00A, 00C, 01A, 01F, 026, 
+                       |         | 028, 03B, 03E, 042, 044, 046
+          ZERO         |   073   | 038, 056, 0B4
+          ciclo        |   07B   | 08C
+          continue     |   066   | 063
+          criba        |   074   | 016, 08D
+          else_c       |   086   | 
+          else_n       |   0C4   | 0C0
+          end_c        |   08D   | 082
+          endwhile     |   0AF   | 0AA
+          for          |   054   | 069
+          for_d        |   096   | 0A0
+          for_m        |   03E   | 04B
+          for_mbody    |   044   | 041
+          for_n        |   0BE   | 0C9
+          loop         |   08F   | 085, 0A1
+          loop_i       |   0A3   | 095, 09E
+          max          |   037   | 012, 04D
+          mod          |   0A5   | 098, 0B0
+          mul          |   0CF   | 07F, 0DF
+          mul_endwhile |   0DE   | 0D6
+          mul_while    |   0D3   | 0DD
+          num          |   0B3   | 021, 0CB
+          vector       |   04F   | 015, 06A
+          while        |   0A6   | 0AE
+          while_l      |   01D   | 02D
+          while_m      |   003   | 011
+          while_v      |   055   | 065
+         --------------------------------------------------------
+
+

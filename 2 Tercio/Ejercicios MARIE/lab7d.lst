@@ -1,0 +1,300 @@
+     Assembly listing for: lab7d.mas
+                Assembled: Mon Nov 01 19:44:31 COT 2021
+
+000 5000 |                INPUT                    
+001 2060 |                STORE BEL                
+002 5000 |                INPUT                    
+003 2061 |                STORE ING                
+004 5000 |                INPUT                    
+005 2062 |                STORE NOR                
+006 5000 |                INPUT                    
+007 2063 |                STORE IRL                
+008 5000 |                INPUT                    
+009 2064 |                STORE FRA                
+         |                                        
+00A 1060 |                LOAD BEL                 
+00B 208F |                STORE MCD_A              
+00C 1061 |                LOAD ING                 
+00D 2090 |                STORE MCD_B              
+00E 0071 |                JNS mcd                  
+00F 2066 |                STORE V1                 
+         |                                        	
+010 1062 |                LOAD NOR                 
+011 208F |                STORE MCD_A              
+012 1066 |                LOAD V1                  
+013 2090 |                STORE MCD_B              
+014 0071 |                JNS mcd                  
+015 2067 |                STORE V2                 
+         |                                        
+016 1063 |                LOAD IRL                 
+017 208F |                STORE MCD_A              
+018 1067 |                LOAD V2                  
+019 2090 |                STORE MCD_B              
+01A 0071 |                JNS mcd                  
+01B 2068 |                STORE V3                 
+         |                                        	
+01C 1064 |                LOAD FRA                 
+01D 208F |                STORE MCD_A              
+01E 1068 |                LOAD V3                  
+01F 2090 |                STORE MCD_B              
+020 0071 |                JNS mcd                  
+021 2069 |                STORE V4                 
+022 1069 |                LOAD V4                  
+023 6000 |                OUTPUT                   
+         |                                        	
+024 1070 |                LOAD ZERO                
+025 206F |                STORE SUMA               
+         |                                        	
+026 1060 |                LOAD BEL                 
+027 20D2 |                STORE DIV_A              
+028 1069 |                LOAD V4                  
+029 20D3 |                STORE DIV_B              
+02A 00C1 |                JNS div                  
+02B 206A |                STORE SUM                
+02C 106F |                LOAD SUMA                
+02D 306A |                ADD SUM                  
+02E 206F |                STORE SUMA               
+02F 106A |                LOAD SUM                 
+030 6000 |                OUTPUT                   
+         |                                        	
+031 1061 |                LOAD ING                 
+032 20D2 |                STORE DIV_A              
+033 1069 |                LOAD V4                  
+034 20D3 |                STORE DIV_B              
+035 00C1 |                JNS div                  
+036 206B |                STORE SUM2               
+037 106F |                LOAD SUMA                
+038 306B |                ADD SUM2                 
+039 206F |                STORE SUMA               
+03A 106B |                LOAD SUM2                
+03B 6000 |                OUTPUT                   
+         |                                        
+03C 1062 |                LOAD NOR                 
+03D 20D2 |                STORE DIV_A              
+03E 1069 |                LOAD V4                  
+03F 20D3 |                STORE DIV_B              
+040 00C1 |                JNS div                  
+041 206C |                STORE SUM3               
+042 106F |                LOAD SUMA                
+043 306C |                ADD SUM3                 
+044 206F |                STORE SUMA               
+045 106C |                LOAD SUM3                
+046 6000 |                OUTPUT                   
+         |                                        
+047 1063 |                LOAD IRL                 
+048 20D2 |                STORE DIV_A              
+049 1069 |                LOAD V4                  
+04A 20D3 |                STORE DIV_B              
+04B 00C1 |                JNS div                  
+04C 206D |                STORE SUM4               
+04D 106F |                LOAD SUMA                
+04E 306D |                ADD SUM4                 
+04F 206F |                STORE SUMA               
+050 106D |                LOAD SUM4                
+051 6000 |                OUTPUT                   
+         |                                        
+052 1064 |                LOAD FRA                 
+053 20D2 |                STORE DIV_A              
+054 1069 |                LOAD V4                  
+055 20D3 |                STORE DIV_B              
+056 00C1 |                JNS div                  
+057 206E |                STORE SUM5               
+058 106F |                LOAD SUMA                
+059 306E |                ADD SUM5                 
+05A 206F |                STORE SUMA               
+05B 106E |                LOAD SUM5                
+05C 6000 |                OUTPUT                   
+         |                                        
+05D 106F |                LOAD SUMA                
+05E 6000 |                OUTPUT                   
+05F 7000 |                HALT                     
+         |                                        
+060 0000 |  BEL           DEC 0                    
+061 0000 |  ING           DEC 0                    
+062 0000 |  NOR           DEC 0                    
+063 0000 |  IRL           DEC 0                    
+064 0000 |  FRA           DEC 0                    
+065 0001 |  ONE           DEC 1                    
+066 0000 |  V1            DEC 0                    
+067 0000 |  V2            DEC 0                    
+068 0000 |  V3            DEC 0                    
+069 0000 |  V4            DEC 0                    
+06A 0000 |  SUM           DEC 0                    
+06B 0000 |  SUM2          DEC 0                    
+06C 0000 |  SUM3          DEC 0                    
+06D 0000 |  SUM4          DEC 0                    
+06E 0000 |  SUM5          DEC 0                    
+06F 0000 |  SUMA          DEC 0                    
+070 0000 |  ZERO          DEC 0                    
+         |                                        
+         |                                        /funcion para calcular el mcd de dos
+071 0000 |  mcd           DEC 0                    
+072 A000 |                CLEAR                    
+073 208E |                STORE MCD_D              
+074 108F |                LOAD MCD_A               
+075 20A8 |                STORE MOD_A              
+076 1090 |                LOAD MCD_B               
+077 20A9 |                STORE MOD_B              
+078 0092 |                JNS mod                  
+079 2091 |                STORE MODULO             
+07A 1091 |                LOAD MODULO              
+07B 208E |                STORE MCD_D              
+07C 1091 |                LOAD MODULO              
+07D 1091 |  whilemcd      LOAD MODULO              
+07E 8400 |                SKIPCOND 400             
+07F 9081 |                JUMP calculamcd          
+080 908C |                JUMP finmcd              
+081 1090 |  calculamcd    LOAD MCD_B               
+082 20A8 |                STORE MOD_A              
+083 1091 |                LOAD MODULO              
+084 20A9 |                STORE MOD_B              
+085 0092 |                JNS mod                  
+086 2091 |                STORE MODULO             
+087 108E |                LOAD MCD_D               
+088 2090 |                STORE MCD_B              
+089 1091 |                LOAD MODULO              
+08A 208E |                STORE MCD_D              
+08B 907D |                JUMP whilemcd            
+08C 1090 |  finmcd        LOAD MCD_B               
+08D C071 |                JUMPI mcd                
+         |                                        
+08E 0000 |  MCD_D         DEC 0                    
+08F 0000 |  MCD_A         DEC 0                    
+090 0000 |  MCD_B         DEC 0                    
+091 0000 |  MODULO        DEC 0                    
+         |                                        
+         |                                        /funcion el modulo
+         |                                        
+092 0000 |  mod           DEC 0                    
+093 A000 |                CLEAR                    
+094 20A7 |                STORE MOD_D              
+095 10A8 |                LOAD MOD_A               
+096 20D2 |                STORE DIV_A              
+097 10A9 |                LOAD MOD_B               
+098 20D3 |                STORE DIV_B              
+099 00C1 |                JNS div                  
+09A 20AB |                STORE divi_A             
+09B 10AB |                LOAD divi_A              
+09C 20BD |                STORE MUL_A              
+09D 10A9 |                LOAD MOD_B               
+09E 20BE |                STORE MUL_B              
+09F 00AC |                JNS mul                  
+0A0 20AA |                STORE multi              
+0A1 10AA |                LOAD multi               
+0A2 10A8 |                LOAD MOD_A               
+0A3 40AA |                SUBT multi               
+0A4 20A7 |                STORE MOD_D              
+0A5 10A7 |                LOAD MOD_D               
+0A6 C092 |                JUMPI mod                
+0A7 0000 |  MOD_D         DEC 0                    
+0A8 0000 |  MOD_A         DEC 0                    
+0A9 0000 |  MOD_B         DEC 0                    
+0AA 0000 |  multi         DEC 0                    
+0AB 0000 |  divi_A        DEC 0                    
+         |                                        		
+         |                                        /función de multiplicación
+0AC 0000 |  mul           DEC 0                    
+0AD A000 |                CLEAR                    
+0AE 20BF |                STORE MUL_I              
+0AF 20C0 |                STORE MUL_M              
+0B0 10BF |  mul_while     LOAD MUL_I               
+0B1 40BE |                SUBT MUL_B               
+0B2 8000 |                SKIPCOND 000             
+0B3 90BB |                JUMP mul_endwhile        
+0B4 10C0 |                LOAD MUL_M               
+0B5 30BD |                ADD MUL_A                
+0B6 20C0 |                STORE MUL_M              
+0B7 10BF |                LOAD MUL_I               
+0B8 3065 |                ADD ONE                  
+0B9 20BF |                STORE MUL_I              
+0BA 90B0 |                JUMP mul_while           
+0BB 10C0 |  mul_endwhile  LOAD MUL_M               
+0BC C0AC |                JUMPI mul                
+0BD 0000 |  MUL_A         DEC 0                    
+0BE 0000 |  MUL_B         DEC 0                    
+0BF 0000 |  MUL_I         DEC 0                    
+0C0 0000 |  MUL_M         DEC 0                    
+         |                                        
+         |                                        /función de division
+0C1 0000 |  div           DEC 0                    
+0C2 A000 |                CLEAR                    
+0C3 20D4 |                STORE DIV_D              
+0C4 10D2 |  div_while     LOAD DIV_A               
+0C5 40D3 |                SUBT DIV_B               
+0C6 8000 |                SKIPCOND 000             
+0C7 90C9 |                JUMP div_whilebody       
+0C8 90D0 |                JUMP div_endwhile        
+0C9 10D2 |  div_whilebody LOAD DIV_A               
+0CA 40D3 |                SUBT DIV_B               
+0CB 20D2 |                STORE DIV_A              
+0CC 10D4 |                LOAD DIV_D               
+0CD 3065 |                ADD ONE                  
+0CE 20D4 |                STORE DIV_D              
+0CF 90C4 |                JUMP div_while           
+0D0 10D4 |  div_endwhile  LOAD DIV_D               
+0D1 C0C1 |                JUMPI div                
+0D2 0000 |  DIV_A         DEC 0                    
+0D3 0000 |  DIV_B         DEC 0                    
+0D4 0000 |  DIV_D         DEC 0                    
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ---------------------------------------------------------
+          Symbol        | Defined | References 
+         ---------------+---------+-------------------------------
+          BEL           |   060   | 001, 00A, 026
+          DIV_A         |   0D2   | 027, 032, 03D, 048, 053, 096, 
+                        |         | 0C4, 0C9, 0CB
+          DIV_B         |   0D3   | 029, 034, 03F, 04A, 055, 098, 
+                        |         | 0C5, 0CA
+          DIV_D         |   0D4   | 0C3, 0CC, 0CE, 0D0
+          FRA           |   064   | 009, 01C, 052
+          ING           |   061   | 003, 00C, 031
+          IRL           |   063   | 007, 016, 047
+          MCD_A         |   08F   | 00B, 011, 017, 01D, 074
+          MCD_B         |   090   | 00D, 013, 019, 01F, 076, 081, 
+                        |         | 088, 08C
+          MCD_D         |   08E   | 073, 07B, 087, 08A
+          MODULO        |   091   | 079, 07A, 07C, 07D, 083, 086, 
+                        |         | 089
+          MOD_A         |   0A8   | 075, 082, 095, 0A2
+          MOD_B         |   0A9   | 077, 084, 097, 09D
+          MOD_D         |   0A7   | 094, 0A4, 0A5
+          MUL_A         |   0BD   | 09C, 0B5
+          MUL_B         |   0BE   | 09E, 0B1
+          MUL_I         |   0BF   | 0AE, 0B0, 0B7, 0B9
+          MUL_M         |   0C0   | 0AF, 0B4, 0B6, 0BB
+          NOR           |   062   | 005, 010, 03C
+          ONE           |   065   | 0B8, 0CD
+          SUM           |   06A   | 02B, 02D, 02F
+          SUM2          |   06B   | 036, 038, 03A
+          SUM3          |   06C   | 041, 043, 045
+          SUM4          |   06D   | 04C, 04E, 050
+          SUM5          |   06E   | 057, 059, 05B
+          SUMA          |   06F   | 025, 02C, 02E, 037, 039, 042, 
+                        |         | 044, 04D, 04F, 058, 05A, 05D
+          V1            |   066   | 00F, 012
+          V2            |   067   | 015, 018
+          V3            |   068   | 01B, 01E
+          V4            |   069   | 021, 022, 028, 033, 03E, 049, 
+                        |         | 054
+          ZERO          |   070   | 024
+          calculamcd    |   081   | 07F
+          div           |   0C1   | 02A, 035, 040, 04B, 056, 099, 
+                        |         | 0D1
+          div_endwhile  |   0D0   | 0C8
+          div_while     |   0C4   | 0CF
+          div_whilebody |   0C9   | 0C7
+          divi_A        |   0AB   | 09A, 09B
+          finmcd        |   08C   | 080
+          mcd           |   071   | 00E, 014, 01A, 020, 08D
+          mod           |   092   | 078, 085, 0A6
+          mul           |   0AC   | 09F, 0BC
+          mul_endwhile  |   0BB   | 0B3
+          mul_while     |   0B0   | 0BA
+          multi         |   0AA   | 0A0, 0A1, 0A3
+          whilemcd      |   07D   | 08B
+         ---------------------------------------------------------
+
+

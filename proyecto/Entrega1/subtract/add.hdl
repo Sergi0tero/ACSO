@@ -1,0 +1,39 @@
+CHIP add {
+    IN ah[16],al[16], bh[16],bl[16];
+    OUT ch[16],cl[16];
+
+    PARTS:
+
+	   HalfAdder(a=al[0],b=bl[0],sum=cl[0],carry=a);
+	   FullAdder(a=al[1],b=bl[1],c=a,sum=cl[1],carry=b);
+	   FullAdder(a=al[2],b=bl[2],c=b,sum=cl[2],carry=c);
+	   FullAdder(a=al[3],b=bl[3],c=c,sum=cl[3],carry=d);
+	   FullAdder(a=al[4],b=bl[4],c=d,sum=cl[4],carry=e);
+	   FullAdder(a=al[5],b=bl[5],c=e,sum=cl[5],carry=f);
+	   FullAdder(a=al[6],b=bl[6],c=f,sum=cl[6],carry=g);
+	   FullAdder(a=al[7],b=bl[7],c=g,sum=cl[7],carry=h);
+	   FullAdder(a=al[8],b=bl[8],c=h,sum=cl[8],carry=i);
+	   FullAdder(a=al[9],b=bl[9],c=i,sum=cl[9],carry=j);
+	   FullAdder(a=al[10],b=bl[10],c=j,sum=cl[10],carry=k);
+	   FullAdder(a=al[11],b=bl[11],c=k,sum=cl[11],carry=l);
+	   FullAdder(a=al[12],b=bl[12],c=l,sum=cl[12],carry=m);
+	   FullAdder(a=al[13],b=bl[13],c=m,sum=cl[13],carry=n);
+	   FullAdder(a=al[14],b=bl[14],c=n,sum=cl[14],carry=o);
+	   FullAdder(a=al[15],b=bl[15],c=o,sum=cl[15],carry=p);
+	   FullAdder(a=ah[0],b=bh[0],c=p,sum=ch[0],carry=q);
+	   FullAdder(a=ah[1],b=bh[1],c=q,sum=ch[1],carry=r);
+	   FullAdder(a=ah[2],b=bh[2],c=r,sum=ch[2],carry=s);
+	   FullAdder(a=ah[3],b=bh[3],c=s,sum=ch[3],carry=u);
+	   FullAdder(a=ah[4],b=bh[4],c=u,sum=ch[4],carry=v);
+	   FullAdder(a=ah[5],b=bh[5],c=v,sum=ch[5],carry=w);
+	   FullAdder(a=ah[6],b=bh[6],c=w,sum=ch[6],carry=x);
+	   FullAdder(a=ah[7],b=bh[7],c=x,sum=ch[7],carry=y);
+	   FullAdder(a=ah[8],b=bh[8],c=y,sum=ch[8],carry=z);
+	   FullAdder(a=ah[9],b=bh[9],c=z,sum=ch[9],carry=aa);
+	   FullAdder(a=ah[10],b=bh[10],c=aa,sum=ch[10],carry=bb);
+	   FullAdder(a=ah[11],b=bh[11],c=bb,sum=ch[11],carry=cc);
+	   FullAdder(a=ah[12],b=bh[12],c=cc,sum=ch[12],carry=dd);
+	   FullAdder(a=ah[13],b=bh[13],c=dd,sum=ch[13],carry=ee);
+	   FullAdder(a=ah[14],b=bh[14],c=ee,sum=ch[14],carry=ff);
+	   FullAdder(a=ah[15],b=bh[15],c=ff,sum=ch[15],carry=gg);
+}

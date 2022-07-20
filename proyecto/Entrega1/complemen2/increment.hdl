@@ -1,0 +1,9 @@
+CHIP increment{
+	IN ah[16], al[16];
+	OUT bh[16], bl[16];
+	
+	PARTS:
+		
+	  	sum16(a = al, b[0] = true, out = bl, cc = c);
+		Add16(a = ah, b[0]= c,out=bh);
+}

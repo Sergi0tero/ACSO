@@ -1,0 +1,235 @@
+	INPUT
+	Store	BEL
+	INPUT
+	STORE	ING
+	Input
+	STORE	NOR
+	INPUT
+	STORE	IRL
+	INPUT	
+	STORE	FRA
+
+	LOAD	BEL
+	STORE	MCD_A
+	LOAD	ING
+	STORE	MCD_B
+	JnS	mcd
+	Store	V1
+	
+	LOAD	NOR
+	STORE	MCD_A
+	LOAD	V1
+	STORE	MCD_B
+	JnS	mcd
+	STORE	V2
+
+	LOAD	IRL
+	STORE	MCD_A
+	LOAD	V2
+	STORE	MCD_B
+	JnS	mcd
+	STORE	V3
+	
+	LOAD	FRA
+	STORE	MCD_A
+	LOAD	V3
+	STORE	MCD_B
+	JnS	mcd
+	STORE	V4	
+	LOAD	V4
+	OUTPUT
+	
+	LOAD	ZERO
+	STORE	SUMA
+	
+	LOAD	BEL
+	STORE	DIV_A
+	LOAD	V4
+	STORE	DIV_B
+	JnS	div
+	Store	SUM
+	Load	SUMA
+	ADD	SUM
+	STORE	SUMA
+	LOAD	SUM	
+	OUTPUT
+	
+	LOAD	ING
+	STORE	DIV_A
+	LOAD	V4
+	STORE	DIV_B
+	JnS	div
+	Store	SUM2
+	Load	SUMA
+	ADD	SUM2
+	STORE	SUMA
+	LOAD	SUM2	
+	OUTPUT
+
+	LOAD	NOR
+	STORE	DIV_A
+	LOAD	V4
+	STORE	DIV_B
+	JnS	div
+	Store	SUM3
+	Load	SUMA
+	ADD	SUM3
+	STORE	SUMA
+	LOAD	SUM3	
+	OUTPUT
+
+	LOAD	IRL
+	STORE	DIV_A
+	LOAD	V4
+	STORE	DIV_B
+	JnS	div
+	Store	SUM4
+	Load	SUMA
+	ADD	SUM4
+	STORE	SUMA
+	LOAD	SUM4	
+	OUTPUT
+
+	LOAD	FRA
+	STORE	DIV_A
+	LOAD	V4
+	STORE	DIV_B
+	JnS	div
+	Store	SUM5
+	Load	SUMA
+	ADD	SUM5
+	STORE	SUMA
+	LOAD	SUM5	
+	OUTPUT
+
+	LOAD	SUMA
+	OUTPUT
+	HALT
+
+BEL,	DEC	0
+ING,	DEC	0
+NOR,	DEC	0
+IRL,	DEC	0
+FRA,	DEC	0
+ONE,	DEC	1
+V1,	DEC	0
+V2,	DEC	0
+V3,	DEC	0
+V4,	DEC	0
+SUM,	DEC	0
+SUM2,	DEC	0
+SUM3,	DEC	0
+SUM4,	DEC	0
+SUM5,	DEC	0
+SUMA,	DEC	0
+ZERO,	DEC	0
+
+/funcion para calcular el mcd de dos
+mcd,		DEC		0
+		CLEAR
+		STORE		MCD_D
+		Load		MCD_A
+		STORE		MOD_A
+		LOAD		MCD_B
+		STORE		MOD_B
+		JnS		mod
+		STORE		MODULO
+		LOAD		MODULO
+		STORE		MCD_D
+		LOAD		MODULO
+whilemcd,	LOAD		MODULO
+		SKIPCOND	400
+		JUMP		calculamcd
+		JUMP		finmcd
+calculamcd,	LOAD		MCD_B
+		STORE		MOD_A
+		LOAD		MODULO
+		STORE		MOD_B
+		JnS		mod
+		Store		MODULO
+		LOAD		MCD_D
+		STORE		MCD_B
+		LOAD		MODULO
+		STORE		MCD_D		
+		Jump		whilemcd
+finmcd,		LOAD		MCD_B
+		JumpI		mcd
+
+MCD_D,	DEC	0
+MCD_A,	DEC	0
+MCD_B,	DEC	0
+MODULO,	DEC	0
+
+/funcion el modulo
+
+mod,		DEC	0
+		CLEAR
+		STORE	MOD_D
+		Load	MOD_A
+		Store	DIV_A
+		Load	MOD_B
+		Store	DIV_B
+		JnS	div
+		Store	divi_A
+		LOAD	divi_A
+		Store	MUL_A
+		LOAD	MOD_B
+		STORE	MUL_B
+		JnS	mul
+		STORE	multi
+		Load	multi
+		Load	MOD_A
+		SUBT	multi
+		Store	MOD_D
+		Load	MOD_D
+		JumpI	mod
+MOD_D,	DEC	0
+MOD_A,	DEC	0
+MOD_B,	DEC	0
+multi,	DEC	0
+divi_A,	DEC	0
+		
+/función de multiplicación
+mul,		DEC	0
+		CLEAR
+		STORE	MUL_I
+		STORE	MUL_M
+mul_while,	LOAD	MUL_I
+		SUBT	MUL_B
+		SKIPCOND	000
+		JUMP		mul_endwhile
+		LOAD		MUL_M
+		ADD		MUL_A
+		STORE		MUL_M
+		LOAD		MUL_I
+		ADD		ONE
+		STORE		MUL_I
+		JUMP		mul_while
+mul_endwhile,	LOAD		MUL_M
+		JUMPI		mul
+MUL_A,		DEC		0
+MUL_B,		DEC		0
+MUL_I,		DEC		0
+MUL_M,		DEC		0
+
+/función de division
+div,		Dec		0
+		Clear		
+		Store		DIV_D
+div_while,	Load		DIV_A
+		Subt		DIV_B
+		Skipcond	000
+		Jump	div_whilebody
+		Jump 	div_endwhile
+div_whilebody,	Load	DIV_A
+		Subt	DIV_B
+		Store	DIV_A
+		Load	DIV_D
+		Add	ONE
+		Store	DIV_D
+		Jump	div_while
+div_endwhile,	Load	DIV_D
+		JumpI	div
+DIV_A,		Dec		0
+DIV_B,		Dec		0
+DIV_D,		Dec		0

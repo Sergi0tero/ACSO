@@ -1,0 +1,66 @@
+/Main
+Input
+        Store    		A
+        Input
+        Store    		B
+
+        Load    		THREE
+        Store    		M_A
+        Load    		B
+        Store    		M_B
+        JnS    			mul
+        Store    		O
+		Output
+
+        Load    		A
+        Subt    		O
+        Store    		P
+		Output
+		
+        Load    		P
+        Store    		M_A
+        Load    		TWO
+        Store    		M_B
+        JnS    			mul
+        Store    		Z
+		Output
+
+        Load    		Z
+        Output
+        Halt
+
+THREE,    	Dec     3
+TWO,      	Dec     2
+ONE,		Dec		1
+A,        	Dec    	0
+B,        	Dec    	0
+C,        	Dec    	0
+O,        	Dec    	0
+P,        	Dec    	0
+Z,        	Dec    	0
+
+
+/Funcion de multiplicacion
+mul,        Dec    0
+            Clear
+            Store      	M_C
+            Store     	M_D
+
+mult_while,        		Load    M_C
+            Subt    	M_B
+            Skipcond    000
+            Jump     	mult_endwhile
+            Load      	M_D
+            Add       	M_A
+            Store     	M_D
+            Load       	M_C
+            Add    		ONE
+            Store      	M_C
+            Jump      	mult_while
+			mult_endwhile,      	Load      M_D
+            JumpI     	mul
+
+M_A,        Dec        0
+M_B,        Dec        0
+M_C,        Dec        0
+M_D,        Dec        0

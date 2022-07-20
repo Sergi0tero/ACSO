@@ -1,0 +1,69 @@
+Input
+        Store    A
+        Input
+        Store    B
+        Input
+        Store    C
+
+        Load    A
+        Store   DIV_A
+        Load    TWO
+        Store   DIV_B
+        JnS    	div
+        Store   A
+
+	
+        Load    B
+        Store 	DIV_A
+        Load    TWO
+        Store   DIV_B
+        JnS    	div
+        Store   B
+
+        Load    C
+        Store 	DIV_A
+        Load    TWO
+        Store   DIV_B
+        JnS    	div
+        Store  	C
+
+        Load    A
+        Add    	B
+        Store   M
+
+	Load    M
+        Add    	C
+        Store   N
+
+        Load    N
+        Output
+        Halt
+
+ONE,        	Dec         	1
+TWO,        	Dec    		2
+A,        	Dec            	0
+B,        	Dec            	0
+C,        	Dec    		0
+M,        	Dec            	0
+N,        	Dec            	0
+
+div,    Dec                            0
+        Clear
+        Store        DIV_D
+div_while,    Load        DIV_A
+        Subt            DIV_B
+        Skipcond    	000
+        Jump    	div_whilebody
+        Jump     	div_endwhile
+div_whilebody,    Load    DIV_A
+        Subt    	DIV_B
+        Store    	DIV_A
+        Load    	DIV_D
+        Add    		ONE
+        Store    	DIV_D
+        Jump    	div_while
+div_endwhile,    load    DIV_D
+        JumpI    div
+DIV_A,        Dec        0
+DIV_B,        Dec        0
+DIV_D,        Dec        0

@@ -1,0 +1,20 @@
+ ------------------------
+ Symbol        | Location
+ --------------+---------
+ A             |   01C
+ B             |   01D
+ C             |   01E
+ M_A           |   033
+ M_B           |   034
+ M_C           |   035
+ M_D           |   036
+ O             |   01F
+ ONE           |   01B
+ P             |   020
+ THREE         |   019
+ TWO           |   01A
+ Z             |   021
+ mul           |   022
+ mult_endwhile |   031
+ mult_while    |   026
+

@@ -1,0 +1,95 @@
+     Assembly listing for: Parcial1.mas
+                Assembled: Tue Oct 26 11:10:55 COT 2021
+
+         |                                        /Main
+000 5000 |                INPUT                    
+001 201C |                STORE A                  
+002 5000 |                INPUT                    
+003 201D |                STORE B                  
+         |                                        
+004 1019 |                LOAD THREE               
+005 2033 |                STORE M_A                
+006 101D |                LOAD B                   
+007 2034 |                STORE M_B                
+008 0022 |                JNS mul                  
+009 201F |                STORE O                  
+00A 6000 |                OUTPUT                   
+         |                                        
+00B 101C |                LOAD A                   
+00C 401F |                SUBT O                   
+00D 2020 |                STORE P                  
+00E 6000 |                OUTPUT                   
+         |                                        		
+00F 1020 |                LOAD P                   
+010 2033 |                STORE M_A                
+011 101A |                LOAD TWO                 
+012 2034 |                STORE M_B                
+013 0022 |                JNS mul                  
+014 2021 |                STORE Z                  
+015 6000 |                OUTPUT                   
+         |                                        
+016 1021 |                LOAD Z                   
+017 6000 |                OUTPUT                   
+018 7000 |                HALT                     
+         |                                        
+019 0003 |  THREE         DEC 3                    
+01A 0002 |  TWO           DEC 2                    
+01B 0001 |  ONE           DEC 1                    
+01C 0000 |  A             DEC 0                    
+01D 0000 |  B             DEC 0                    
+01E 0000 |  C             DEC 0                    
+01F 0000 |  O             DEC 0                    
+020 0000 |  P             DEC 0                    
+021 0000 |  Z             DEC 0                    
+         |                                        
+         |                                        
+         |                                        /Funcion de multiplicacion
+022 0000 |  mul           DEC 0                    
+023 A000 |                CLEAR                    
+024 2035 |                STORE M_C                
+025 2036 |                STORE M_D                
+         |                                        
+026 1035 |  mult_while    LOAD M_C                 
+027 4034 |                SUBT M_B                 
+028 8000 |                SKIPCOND 000             
+029 9031 |                JUMP mult_endwhile       
+02A 1036 |                LOAD M_D                 
+02B 3033 |                ADD M_A                  
+02C 2036 |                STORE M_D                
+02D 1035 |                LOAD M_C                 
+02E 301B |                ADD ONE                  
+02F 2035 |                STORE M_C                
+030 9026 |                JUMP mult_while          
+031 1036 |  mult_endwhile LOAD M_D                 
+032 C022 |                JUMPI mul                
+         |                                        
+033 0000 |  M_A           DEC 0                    
+034 0000 |  M_B           DEC 0                    
+035 0000 |  M_C           DEC 0                    
+036 0000 |  M_D           DEC 0                    
+
+Assembly successful.
+
+         SYMBOL TABLE
+         ---------------------------------------------------------
+          Symbol        | Defined | References 
+         ---------------+---------+-------------------------------
+          A             |   01C   | 001, 00B
+          B             |   01D   | 003, 006
+          C             |   01E   | 
+          M_A           |   033   | 005, 010, 02B
+          M_B           |   034   | 007, 012, 027
+          M_C           |   035   | 024, 026, 02D, 02F
+          M_D           |   036   | 025, 02A, 02C, 031
+          O             |   01F   | 009, 00C
+          ONE           |   01B   | 02E
+          P             |   020   | 00D, 00F
+          THREE         |   019   | 004
+          TWO           |   01A   | 011
+          Z             |   021   | 014, 016
+          mul           |   022   | 008, 013, 032
+          mult_endwhile |   031   | 029
+          mult_while    |   026   | 030
+         ---------------------------------------------------------
+
+

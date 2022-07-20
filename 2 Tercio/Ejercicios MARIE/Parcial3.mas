@@ -1,0 +1,24 @@
+Input
+        Store        X
+        Load        X
+        Subt        Cien
+        Skipcond    000
+        Jump        endif_eq
+        Jump        eq_if
+eq_if,        Load        X
+        Subt        Diez
+        Skipcond    400
+        Jump        endif_eq
+        Jump        body
+body,        Load        X
+        Add        X
+        Store        Y
+        Jump        endif_eq
+endif_eq,    Load        Y
+        Output
+        Halt
+
+X,        Dec        0
+Y,        Dec        3
+Diez,        Dec        10
+Cien,        Dec        100

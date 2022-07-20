@@ -1,0 +1,36 @@
+/Usando lenguaje ensamblador de MARIE, leer tres números a,b,c y  escribir el mayor valor.
+
+		Input		
+ 		Store		A
+		Input
+		Store		B
+		Input
+		Store		C
+/ A > B
+		Load 		A
+		Subt		B
+		Skipcond 	800 /A > B ?
+		Jump		else
+		Load		A	/A > B
+		Jump		endif
+else,	Load 		B	/A < B
+endif,	Store 		D
+/ D > C
+		Load 		C
+		Subt 		D
+		Skipcond 	800 /C > D ?
+		Jump 		elsee
+		Load		C	/C > D
+		Jump 		endiff
+elsee, 	Load		D	/C < D
+endiff,	Store 		E
+		Output		E
+		Halt
+
+/Declaring variables
+A,		Dec 0
+B,		Dec 0
+C,		Dec 0
+D,		Dec 0
+E,		Dec 0
+ZERO,	Dec 0

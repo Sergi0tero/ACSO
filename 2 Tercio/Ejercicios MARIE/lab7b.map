@@ -1,0 +1,14 @@
+ -----------------
+ Symbol | Location
+ -------+---------
+ A      |   018
+ B      |   019
+ C      |   01A
+ D      |   01B
+ E      |   01C
+ ZERO   |   01D
+ else   |   00C
+ elsee  |   014
+ endif  |   00D
+ endiff |   015
+

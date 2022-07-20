@@ -1,0 +1,59 @@
+     Assembly listing for: lab7b.mas
+                Assembled: Thu Oct 21 23:27:34 COT 2021
+
+         |                          /Usando lenguaje ensamblador de MARIE, leer tres números a,b,c y  escribir el mayor valor.
+         |                          
+000 5000 |         INPUT             
+001 2018 |         STORE A           
+002 5000 |         INPUT             
+003 2019 |         STORE B           
+004 5000 |         INPUT             
+005 201A |         STORE C           
+         |                          / A > B
+006 1018 |         LOAD A            
+007 4019 |         SUBT B            
+008 8800 |         SKIPCOND 800     /A > B ?
+009 900C |         JUMP else         
+00A 1018 |         LOAD A           /A > B
+00B 900D |         JUMP endif        
+00C 1019 |  else   LOAD B           /A < B
+00D 201B |  endif  STORE D           
+         |                          / D > C
+00E 101A |         LOAD C            
+00F 401B |         SUBT D            
+010 8800 |         SKIPCOND 800     /C > D ?
+011 9014 |         JUMP elsee        
+012 101A |         LOAD C           /C > D
+013 9015 |         JUMP endiff       
+014 101B |  elsee  LOAD D           /C < D
+015 201C |  endiff STORE E           
+016 6000 |         OUTPUT            
+017 7000 |         HALT              
+         |                          
+         |                          /Declaring variables
+018 0000 |  A      DEC 0             
+019 0000 |  B      DEC 0             
+01A 0000 |  C      DEC 0             
+01B 0000 |  D      DEC 0             
+01C 0000 |  E      DEC 0             
+01D 0000 |  ZERO   DEC 0             
+
+Assembly successful.
+
+         SYMBOL TABLE
+         --------------------------------------------------
+          Symbol | Defined | References 
+         --------+---------+-------------------------------
+          A      |   018   | 001, 006, 00A
+          B      |   019   | 003, 007, 00C
+          C      |   01A   | 005, 00E, 012
+          D      |   01B   | 00D, 00F, 014
+          E      |   01C   | 015
+          ZERO   |   01D   | 
+          else   |   00C   | 009
+          elsee  |   014   | 011
+          endif  |   00D   | 00B
+          endiff |   015   | 013
+         --------------------------------------------------
+
+

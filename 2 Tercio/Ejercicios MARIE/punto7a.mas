@@ -1,0 +1,76 @@
+		Input		
+ 		Store		A
+		Input
+		Store		B
+		Input
+		Store		C
+		Input
+		Store		x
+/                               
+/x*x
+		Load		ZERO
+		Store 		I
+		Store 		Y
+while,		Load		I
+		Subt		x
+		Skipcond	000	/i < x?
+		Jump		endwhile
+		Load		Y
+		Add		x
+		Store		Y
+		Load 		I
+		Add		ONE
+		Store		I
+		Jump		while
+endwhile, 	Load		Y
+/a*X ^ 2
+		
+		Load		ZERO
+		Store 		I
+		Store 		Z
+whilea,		Load		I
+		Subt		Y
+		Skipcond	000	/i < Y?
+		Jump		endwhilea
+		Load		Z
+		Add		A
+		Store		Z
+		Load 		I
+		Add		ONE
+		Store		I
+		Jump		whilea
+endwhilea, 	Load		Z
+/ b * X
+		Load		ZERO
+		Store 		I
+		Store 		W
+whileb,		Load		I
+		Subt		x
+		Skipcond	000	/i < x?
+		Jump		endwhileb
+		Load		W
+		Add		B
+		Store		W
+		Load 		I
+		Add		ONE
+		Store		I
+		Jump		whileb
+endwhileb, 	Load		W
+/a*X ^ 2 + b * X
+		Add		Z
+/a * X ^ 2 + b * X + c
+		Add		C
+		Output
+		Halt
+x,		Dec 0
+A,		Dec 0
+B,		Dec 0
+C,		Dec 0
+s,		Dec 0
+I,		Dec 0
+J,		Dec 0
+ONE,		Dec 1
+ZERO,		Dec 0
+Y,		Dec 0
+Z,		Dec 0
+W,		Dec 0

@@ -1,0 +1,81 @@
+CHIP memory
+{
+	IN a[5],inh[16],inl[16],w;
+	OUT outh[16],outl[16];
+PARTS:
+
+	DMux32Way(in=w,sel=a,a=a1,b=a2,c=a3,d=a4,e=a5,f=a6,g=a7,h=a8,i=a9,j=a10,k=a11,l=a12,m=a13,n=a14,o=a15,p=a16,q=a17,r=a18,s=a19,t=a20,u=a21,v=a22,w=a23,x=a24,y=a25,z=a26,aa=a27,ab=a28,ac=a29,ad=a30,ae=a31,af=a32);
+	
+	aux36(t=a1,ih=inh,il=inl,a=b1,b=b2,c=b3,d=b4,e=b5,f=b6,g=b7,h=b8,i=b9,j=b10,k=b11,l=b12,m=b13,n=b14,o=b15,p=b16,q=b17,r=b18,s=b19,tt=b20,u=b21,v=b22,w=b23,x=b24,y=b25,z=b26,aa=b27,ab=b28,ac=b29,ad=b30,ae=b31,af=b32);
+	aux36(t=a2,ih=inh,il=inl,a=c1,b=c2,c=c3,d=c4,e=c5,f=c6,g=c7,h=c8,i=c9,j=c10,k=c11,l=c12,m=c13,n=c14,o=c15,p=c16,q=c17,r=c18,s=c19,tt=c20,u=c21,v=c22,w=c23,x=c24,y=c25,z=c26,aa=c27,ab=c28,ac=c29,ad=c30,ae=c31,af=c32);
+
+	aux36(t=a3,ih=inh,il=inl,a=d1,b=d2,c=d3,d=d4,e=d5,f=d6,g=d7,h=d8,i=d9,j=d10,k=d11,l=d12,m=d13,n=d14,o=d15,p=d16,q=d17,r=d18,s=d19,tt=d20,u=d21,v=d22,w=d23,x=d24,y=d25,z=d26,aa=d27,ab=d28,ac=d29,ad=d30,ae=d31,af=d32);
+
+	aux36(t=a4,ih=inh,il=inl,a=e1,b=e2,c=e3,e=e4,e=e5,f=e6,g=e7,h=e8,i=e9,j=e10,k=e11,l=e12,m=e13,n=e14,o=e15,p=e16,q=e17,r=e18,s=e19,tt=e20,u=e21,v=e22,w=e23,x=e24,y=e25,z=e26,aa=e27,ab=e28,ac=e29,ad=e30,ae=e31,af=e32);
+	aux36(t=a5,ih=inh,il=inl,a=f1,b=f2,c=f3,d=f4,e=f5,f=f6,g=f7,h=f8,i=f9,j=f10,k=f11,l=f12,m=f13,n=f14,o=f15,p=f16,q=f17,r=f18,s=f19,tt=f20,u=f21,v=f22,w=f23,x=f24,y=f25,z=f26,aa=f27,ab=f28,ac=f29,ad=f30,ae=f31,af=f32);
+	aux36(t=a6,ih=inh,il=inl,a=g1,b=g2,c=g3,d=g4,e=g5,f=g6,g=g7,h=g8,i=g9,j=g10,k=g11,l=g12,m=g13,n=g14,o=g15,p=g16,q=g17,r=g18,s=g19,tt=g20,u=g21,v=g22,w=g23,x=g24,y=g25,z=g26,aa=g27,ab=g28,ac=g29,ad=g30,ae=g31,af=g32);
+	aux36(t=a7,ih=inh,il=inl,a=h1,b=h2,c=h3,d=h4,e=h5,f=h6,g=h7,h=h8,i=h9,j=h10,k=h11,l=h12,m=h13,n=h14,o=h15,p=h16,q=h17,r=h18,s=h19,tt=h20,u=h21,v=h22,w=h23,x=h24,y=h25,z=h26,aa=h27,ab=h28,ac=h29,ad=h30,ae=h31,af=h32);
+	aux36(t=a8,ih=inh,il=inl,a=i1,b=i2,c=i3,d=i4,e=i5,f=i6,g=i7,h=i8,i=i9,j=i10,k=i11,l=i12,m=i13,n=i14,o=i15,p=i16,q=i17,r=i18,s=i19,tt=i20,u=i21,v=i22,w=i23,x=i24,y=i25,z=i26,aa=i27,ab=i28,ac=i29,ad=i30,ae=i31,af=i32);
+	aux36(t=a9,ih=inh,il=inl,a=j1,b=j2,c=j3,d=j4,e=j5,f=j6,g=j7,h=j8,i=j9,j=j10,k=j11,l=j12,m=j13,n=j14,o=j15,p=j16,q=j17,r=j18,s=j19,tt=j20,u=j21,v=j22,w=j23,x=j24,y=j25,z=j26,aa=j27,ab=j28,ac=j29,ad=j30,ae=j31,af=j32);
+	aux36(t=a10,ih=inh,il=inl,a=k1,b=k2,c=k3,d=k4,e=k5,f=k6,g=k7,h=k8,i=k9,j=k10,k=k11,l=k12,m=k13,n=k14,o=k15,p=k16,q=k17,r=k18,s=k19,tt=k20,u=k21,v=k22,w=k23,x=k24,y=k25,z=k26,aa=k27,ab=k28,ac=k29,ad=k30,ae=k31,af=k32);
+	aux36(t=a11,ih=inh,il=inl,a=l1,b=l2,c=l3,d=l4,e=l5,f=l6,g=l7,h=l8,i=l9,j=l10,k=l11,l=l12,m=l13,n=l14,o=l15,p=l16,q=l17,r=l18,s=l19,tt=l20,u=l21,v=l22,w=l23,x=l24,y=l25,z=l26,aa=l27,ab=l28,ac=l29,ad=l30,ae=l31,af=l32);
+	aux36(t=a12,ih=inh,il=inl,a=m1,b=m2,c=m3,d=m4,e=m5,f=m6,g=m7,h=m8,i=m9,j=m10,k=m11,l=m12,m=m13,n=m14,o=m15,p=m16,q=m17,r=m18,s=m19,tt=m20,u=m21,v=m22,w=m23,x=m24,y=m25,z=m26,aa=m27,ab=m28,ac=m29,ad=m30,ae=m31,af=m32);
+	aux36(t=a13,ih=inh,il=inl,a=n1,b=n2,c=n3,d=n4,e=n5,f=n6,g=n7,h=n8,i=n9,j=n10,k=n11,l=n12,m=n13,n=n14,o=n15,p=n16,q=n17,r=n18,s=n19,tt=n20,u=n21,v=n22,w=n23,x=n24,y=n25,z=n26,aa=n27,ab=n28,ac=n29,ad=n30,ae=n31,af=n32);
+	aux36(t=a14,ih=inh,il=inl,a=o1,b=o2,c=o3,d=o4,e=o5,f=o6,g=o7,h=o8,i=o9,j=o10,k=o11,l=o12,m=o13,n=o14,o=o15,p=o16,q=o17,r=o18,s=o19,tt=o20,u=o21,v=o22,w=o23,x=o24,y=o25,z=o26,aa=o27,ab=o28,ac=o29,ad=o30,ae=o31,af=o32);
+	aux36(t=a15,ih=inh,il=inl,a=p1,b=p2,c=p3,d=p4,e=p5,f=p6,g=p7,h=p8,i=p9,j=p10,k=p11,l=p12,m=p13,n=p14,o=p15,p=p16,q=p17,r=p18,s=p19,tt=p20,u=p21,v=p22,w=p23,x=p24,y=p25,z=p26,aa=p27,ab=p28,ac=p29,ad=p30,ae=p31,af=p32);
+	aux36(t=a16,ih=inh,il=inl,a=q1,b=q2,c=q3,d=q4,e=q5,f=q6,g=q7,h=q8,i=q9,j=q10,k=q11,l=q12,m=q13,n=q14,o=q15,p=q16,q=q17,r=q18,s=q19,tt=q20,u=q21,v=q22,w=q23,x=q24,y=q25,z=q26,aa=q27,ab=q28,ac=q29,ad=q30,ae=q31,af=q32);
+	aux36(t=a17,ih=inh,il=inl,a=r1,b=r2,c=r3,d=r4,e=r5,f=r6,g=r7,h=r8,i=r9,j=r10,k=r11,l=r12,m=r13,n=r14,o=r15,p=r16,q=r17,r=r18,s=r19,tt=r20,u=r21,v=r22,w=r23,x=r24,y=r25,z=r26,aa=r27,ab=r28,ac=r29,ad=r30,ae=r31,af=r32);
+	aux36(t=a18,ih=inh,il=inl,a=s1,b=s2,c=s3,d=s4,e=s5,f=s6,g=s7,h=s8,i=s9,j=s10,k=s11,l=s12,m=s13,n=s14,o=s15,p=s16,q=s17,r=s18,s=s19,tt=s20,u=s21,v=s22,w=s23,x=s24,y=s25,z=s26,aa=s27,ab=s28,ac=s29,ad=s30,ae=s31,af=s32);
+	aux36(t=a19,ih=inh,il=inl,a=tt1,b=tt2,c=tt3,d=tt4,e=tt5,f=tt6,g=tt7,h=tt8,i=tt9,j=tt10,k=tt11,l=tt12,m=tt13,n=tt14,o=tt15,p=tt16,q=tt17,r=tt18,s=tt19,tt=tt20,u=tt21,v=tt22,w=tt23,x=tt24,y=tt25,z=tt26,aa=tt27,ab=tt28,ac=tt29,ad=tt30,ae=tt31,af=tt32);
+	aux36(t=a20,ih=inh,il=inl,a=u1,b=u2,c=u3,d=u4,e=u5,f=u6,g=u7,h=u8,i=u9,j=u10,k=u11,l=u12,m=u13,n=u14,o=u15,p=u16,q=u17,r=u18,s=u19,tt=u20,u=u21,v=u22,w=u23,x=u24,y=u25,z=u26,aa=u27,ab=u28,ac=u29,ad=u30,ae=u31,af=u32);
+	aux36(t=a21,ih=inh,il=inl,a=v1,b=v2,c=v3,d=v4,e=v5,f=v6,g=v7,h=v8,i=v9,j=v10,k=v11,l=v12,m=v13,n=v14,o=v15,p=v16,q=v17,r=v18,s=v19,tt=v20,u=v21,v=v22,w=v23,x=v24,y=v25,z=v26,aa=v27,ab=v28,ac=v29,ad=v30,ae=v31,af=v32);
+	aux36(t=a22,ih=inh,il=inl,a=w1,b=w2,c=w3,d=w4,e=w5,f=w6,g=w7,h=w8,i=w9,j=w10,k=w11,l=w12,m=w13,n=w14,o=w15,p=w16,q=w17,r=w18,s=w19,tt=w20,u=w21,v=w22,w=w23,x=w24,y=w25,z=w26,aa=w27,ab=w28,ac=w29,ad=w30,ae=w31,af=w32);
+	aux36(t=a23,ih=inh,il=inl,a=x1,b=x2,c=x3,d=x4,e=x5,f=x6,g=x7,h=x8,i=x9,j=x10,k=x11,l=x12,m=x13,n=x14,o=x15,p=x16,q=x17,r=x18,s=x19,tt=x20,u=x21,v=x22,w=x23,x=x24,y=x25,z=x26,aa=x27,ab=x28,ac=x29,ad=x30,ae=x31,af=x32);
+	aux36(t=a24,ih=inh,il=inl,a=y1,b=y2,c=y3,d=y4,e=y5,f=y6,g=y7,h=y8,i=y9,j=y10,k=y11,l=y12,m=y13,n=y14,o=y15,p=y16,q=y17,r=y18,s=y19,tt=y20,u=y21,v=y22,w=y23,x=y24,y=y25,z=y26,aa=y27,ab=y28,ac=y29,ad=y30,ae=y31,af=y32);
+	aux36(t=a25,ih=inh,il=inl,a=z1,b=z2,c=z3,d=z4,e=z5,f=z6,g=z7,h=z8,i=z9,j=z10,k=z11,l=z12,m=z13,n=z14,o=z15,p=z16,q=z17,r=z18,s=z19,tt=z20,u=z21,v=z22,w=z23,x=z24,y=z25,z=z26,aa=z27,ab=z28,ac=z29,ad=z30,ae=z31,af=z32);
+	aux36(t=a26,ih=inh,il=inl,a=aa1,b=aa2,c=aa3,d=aa4,e=aa5,f=aa6,g=aa7,h=aa8,i=aa9,j=aa10,k=aa11,l=aa12,m=aa13,n=aa14,o=aa15,p=aa16,q=aa17,r=aa18,s=aa19,tt=aa20,u=aa21,v=aa22,w=aa23,x=aa24,y=aa25,z=aa26,aa=aa27,ab=aa28,ac=aa29,ad=aa30,ae=aa31,af=aa32);
+	aux36(t=a27,ih=inh,il=inl,a=ab1,b=ab2,c=ab3,d=ab4,e=ab5,f=ab6,g=ab7,h=ab8,i=ab9,j=ab10,k=ab11,l=ab12,m=ab13,n=ab14,o=ab15,p=ab16,q=ab17,r=ab18,s=ab19,tt=ab20,u=ab21,v=ab22,w=ab23,x=ab24,y=ab25,z=ab26,aa=ab27,ab=ab28,ac=ab29,ad=ab30,ae=ab31,af=ab32);
+	aux36(t=a28,ih=inh,il=inl,a=ac1,b=ac2,c=ac3,d=ac4,e=ac5,f=ac6,g=ac7,h=ac8,i=ac9,j=ac10,k=ac11,l=ac12,m=ac13,n=ac14,o=ac15,p=ac16,q=ac17,r=ac18,s=ac19,tt=ac20,u=ac21,v=ac22,w=ac23,x=ac24,y=ac25,z=ac26,aa=ac27,ab=ac28,ac=ac29,ad=ac30,ae=ac31,af=ac32);
+	aux36(t=a29,ih=inh,il=inl,a=ad1,b=ad2,c=ad3,d=ad4,e=ad5,f=ad6,g=ad7,h=ad8,i=ad9,j=ad10,k=ad11,l=ad12,m=ad13,n=ad14,o=ad15,p=ad16,q=ad17,r=ad18,s=ad19,tt=ad20,u=ad21,v=ad22,w=ad23,x=ad24,y=ad25,z=ad26,aa=ad27,ab=ad28,ac=ad29,ad=ad30,ae=ad31,af=ad32);
+	aux36(t=a30,ih=inh,il=inl,a=ae1,b=ae2,c=ae3,d=ae4,e=ae5,f=ae6,g=ae7,h=ae8,i=ae9,j=ae10,k=ae11,l=ae12,m=ae13,n=ae14,o=ae15,p=ae16,q=ae17,r=ae18,s=ae19,tt=ae20,u=ae21,v=ae22,w=ae23,x=ae24,y=ae25,z=ae26,aa=ae27,ab=ae28,ac=ae29,ad=ae30,ae=ae31,af=ae32);
+	aux36(t=a31,ih=inh,il=inl,a=af1,b=af2,c=af3,d=af4,e=af5,f=af6,g=af7,h=af8,i=af9,j=af10,k=af11,l=af12,m=af13,n=af14,o=af15,p=af16,q=af17,r=af18,s=af19,tt=af20,u=af21,v=af22,w=af23,x=af24,y=af25,z=af26,aa=af27,ab=af28,ac=af29,ad=af30,ae=af31,af=af32);
+	aux36(t=a32,ih=inh,il=inl,a=ag1,b=ag2,c=ag3,d=ag4,e=ag5,f=ag6,g=ag7,h=ag8,i=ag9,j=ag10,k=ag11,l=ag12,m=ag13,n=ag14,o=ag15,p=ag16,q=ag17,r=ag18,s=ag19,tt=ag20,u=ag21,v=ag22,w=ag23,x=ag24,y=ag25,z=ag26,aa=ag27,ab=ag28,ac=ag29,ad=ag30,ae=ag31,af=ag32);
+
+	
+
+	Mux32Way(a=b1,b=c1,c=d1,d=e1,e=f1,f=g1,g=h1,h=i1,i=j1,j=k1,k=l1,l=m1,m=n1,n=o1,o=p1,p=q1,q=r1,r=s1,s=tt1,t=u1,u=v1,v=w1,w=x1,x=y1,y=z1,z=aa1,aa=ab1,ab=ac1,ac=ad1,ad=ae1,ae=af1,af=ag1,sel=a,out=outl[0]);
+	Mux32Way(a=b2,b=c2,c=d2,d=e2,e=f2,f=g2,g=h2,h=i2,i=j2,j=k2,k=l2,l=m2,m=n2,n=o2,o=p2,p=q2,q=r2,r=s2,s=tt2,t=u2,u=v2,v=w2,w=x2,x=y2,y=z2,z=aa2,aa=ab2,ab=ac2,ac=ad2,ad=ae2,ae=af2,af=ag2,sel=a,out=outl[1]);
+	Mux32Way(a=b3,b=c3,c=d3,d=e3,e=f3,f=g3,g=h3,h=i3,i=j3,j=k3,k=l3,l=m3,m=n3,n=o3,o=p3,p=q3,q=r3,r=s3,s=tt3,t=u3,u=v3,v=w3,w=x3,x=y3,y=z3,z=aa3,aa=ab3,ab=ac3,ac=ad3,ad=ae3,ae=af3,af=ag3,sel=a,out=outl[2]);
+	Mux32Way(a=b4,b=c4,c=d4,d=e4,e=f4,f=g4,g=h4,h=i4,i=j4,j=k4,k=l4,l=m4,m=n4,n=o4,o=p4,p=q4,q=r4,r=s4,s=tt4,t=u4,u=v4,v=w4,w=x4,x=y4,y=z4,z=aa4,aa=ab4,ab=ac4,ac=ad4,ad=ae4,ae=af4,af=ag4,sel=a,out=outl[3]);
+	Mux32Way(a=b5,b=c5,c=d5,d=e5,e=f5,f=g5,g=h5,h=i5,i=j5,j=k5,k=l5,l=m5,m=n5,n=o5,o=p5,p=q5,q=r5,r=s5,s=tt5,t=u5,u=v5,v=w5,w=x5,x=y5,y=z5,z=aa5,aa=ab5,ab=ac5,ac=ad5,ad=ae5,ae=af5,af=ag5,sel=a,out=outl[4]);
+	Mux32Way(a=b6,b=c6,c=d6,d=e6,e=f6,f=g6,g=h6,h=i6,i=j6,j=k6,k=l6,l=m6,m=n6,n=o6,o=p6,p=q6,q=r6,r=s6,s=tt6,t=u6,u=v6,v=w6,w=x6,x=y6,y=z6,z=aa6,aa=ab6,ab=ac6,ac=ad6,ad=ae6,ae=af6,af=ag6,sel=a,out=outl[5]);
+	Mux32Way(a=b7,b=c7,c=d7,d=e7,e=f7,f=g7,g=h7,h=i7,i=j7,j=k7,k=l7,l=m7,m=n7,n=o7,o=p7,p=q7,q=r7,r=s7,s=tt7,t=u7,u=v7,v=w7,w=x7,x=y7,y=z7,z=aa7,aa=ab7,ab=ac7,ac=ad7,ad=ae7,ae=af7,af=ag7,sel=a,out=outl[6]);
+	Mux32Way(a=b8,b=c8,c=d8,d=e8,e=f8,f=g8,g=h8,h=i8,i=j8,j=k8,k=l8,l=m8,m=n8,n=o8,o=p8,p=q8,q=r8,r=s8,s=tt8,t=u8,u=v8,v=w8,w=x8,x=y8,y=z8,z=aa8,aa=ab8,ab=ac8,ac=ad8,ad=ae8,ae=af8,af=ag8,sel=a,out=outl[7]);
+	Mux32Way(a=b9,b=c9,c=d9,d=e9,e=f9,f=g9,g=h9,h=i9,i=j9,j=k9,k=l9,l=m9,m=n9,n=o9,o=p9,p=q9,q=r9,r=s9,s=tt9,t=u9,u=v9,v=w9,w=x9,x=y9,y=z9,z=aa9,aa=ab9,ab=ac9,ac=ad9,ad=ae9,ae=af9,af=ag9,sel=a,out=outl[8]);
+	Mux32Way(a=b10,b=c10,c=d10,d=e10,e=f10,f=g10,g=h10,h=i10,i=j10,j=k10,k=l10,l=m10,m=n10,n=o10,o=p10,p=q10,q=r10,r=s10,s=tt10,t=u10,u=v10,v=w10,w=x10,x=y10,y=z10,z=aa10,aa=ab10,ab=ac10,ac=ad10,ad=ae10,ae=af10,af=ag10,sel=a,out=outl[9]);
+	Mux32Way(a=b11,b=c11,c=d11,d=e11,e=f11,f=g11,g=h11,h=i11,i=j11,j=k11,k=l11,l=m11,m=n11,n=o11,o=p11,p=q11,q=r11,r=s11,s=tt11,t=u11,u=v11,v=w11,w=x11,x=y11,y=z11,z=aa11,aa=ab11,ab=ac11,ac=ad11,ad=ae11,ae=af11,af=ag11,sel=a,out=outl[10]);
+	Mux32Way(a=b12,b=c12,c=d12,d=e12,e=f12,f=g12,g=h12,h=i12,i=j12,j=k12,k=l12,l=m12,m=n12,n=o12,o=p12,p=q12,q=r12,r=s12,s=tt12,t=u12,u=v12,v=w12,w=x12,x=y12,y=z12,z=aa12,aa=ab12,ab=ac12,ac=ad12,ad=ae12,ae=af12,af=ag12,sel=a,out=outl[11]);
+	Mux32Way(a=b13,b=c13,c=d13,d=e13,e=f13,f=g13,g=h13,h=i13,i=j13,j=k13,k=l13,l=m13,m=n13,n=o13,o=p13,p=q13,q=r13,r=s13,s=tt13,t=u13,u=v13,v=w13,w=x13,x=y13,y=z13,z=aa13,aa=ab13,ab=ac13,ac=ad13,ad=ae13,ae=af13,af=ag13,sel=a,out=outl[12]);
+	Mux32Way(a=b14,b=c14,c=d14,d=e14,e=f14,f=g14,g=h14,h=i14,i=j14,j=k14,k=l14,l=m14,m=n14,n=o14,o=p14,p=q14,q=r14,r=s14,s=tt14,t=u14,u=v14,v=w14,w=x14,x=y14,y=z14,z=aa14,aa=ab14,ab=ac14,ac=ad14,ad=ae14,ae=af14,af=ag14,sel=a,out=outl[13]);
+	Mux32Way(a=b15,b=c15,c=d15,d=e15,e=f15,f=g15,g=h15,h=i15,i=j15,j=k15,k=l15,l=m15,m=n15,n=o15,o=p15,p=q15,q=r15,r=s15,s=tt15,t=u15,u=v15,v=w15,w=x15,x=y15,y=z15,z=aa15,aa=ab15,ab=ac15,ac=ad15,ad=ae15,ae=af15,af=ag15,sel=a,out=outl[14]);
+	Mux32Way(a=b16,b=c16,c=d16,d=e16,e=f16,f=g16,g=h16,h=i16,i=j16,j=k16,k=l16,l=m16,m=n16,n=o16,o=p16,p=q16,q=r16,r=s16,s=tt16,t=u16,u=v16,v=w16,w=x16,x=y16,y=z16,z=aa16,aa=ab16,ab=ac16,ac=ad16,ad=ae16,ae=af16,af=ag16,sel=a,out=outl[15]);
+
+
+	Mux32Way(a=b17,b=c17,c=d17,d=e17,e=f17,f=g17,g=h17,h=i17,i=j17,j=k17,k=l17,l=m17,m=n17,n=o17,o=p17,p=q17,q=r17,r=s17,s=tt17,t=u17,u=v17,v=w17,w=x17,x=y17,y=z17,z=aa17,aa=ab17,ab=ac17,ac=ad17,ad=ae17,ae=af17,af=ag17,sel=a,out=outh[0]);
+	Mux32Way(a=b18,b=c18,c=d18,d=e18,e=f18,f=g18,g=h18,h=i18,i=j18,j=k18,k=l18,l=m18,m=n18,n=o18,o=p18,p=q18,q=r18,r=s18,s=tt18,t=u18,u=v18,v=w18,w=x18,x=y18,y=z18,z=aa18,aa=ab18,ab=ac18,ac=ad18,ad=ae18,ae=af18,af=ag18,sel=a,out=outh[1]);
+	Mux32Way(a=b19,b=c19,c=d19,d=e19,e=f19,f=g19,g=h19,h=i19,i=j19,j=k19,k=l19,l=m19,m=n19,n=o19,o=p19,p=q19,q=r19,r=s19,s=tt19,t=u19,u=v19,v=w19,w=x19,x=y19,y=z19,z=aa19,aa=ab19,ab=ac19,ac=ad19,ad=ae19,ae=af19,af=ag19,sel=a,out=outh[2]);
+	Mux32Way(a=b20,b=c20,c=d20,d=e20,e=f20,f=g20,g=h20,h=i20,i=j20,j=k20,k=l20,l=m20,m=n20,n=o20,o=p20,p=q20,q=r20,r=s20,s=tt20,t=u20,u=v20,v=w20,w=x20,x=y20,y=z20,z=aa20,aa=ab20,ab=ac20,ac=ad20,ad=ae20,ae=af20,af=ag20,sel=a,out=outh[3]);
+	Mux32Way(a=b21,b=c21,c=d21,d=e21,e=f21,f=g21,g=h21,h=i21,i=j21,j=k21,k=l21,l=m21,m=n21,n=o21,o=p21,p=q21,q=r21,r=s21,s=tt21,t=u21,u=v21,v=w21,w=x21,x=y21,y=z21,z=aa21,aa=ab21,ab=ac21,ac=ad21,ad=ae21,ae=af21,af=ag21,sel=a,out=outh[4]);
+	Mux32Way(a=b22,b=c22,c=d22,d=e22,e=f22,f=g22,g=h22,h=i22,i=j22,j=k22,k=l22,l=m22,m=n22,n=o22,o=p22,p=q22,q=r22,r=s22,s=tt22,t=u22,u=v22,v=w22,w=x22,x=y22,y=z22,z=aa22,aa=ab22,ab=ac22,ac=ad22,ad=ae22,ae=af22,af=ag22,sel=a,out=outh[5]);
+	Mux32Way(a=b23,b=c23,c=d23,d=e23,e=f23,f=g23,g=h23,h=i23,i=j23,j=k23,k=l23,l=m23,m=n23,n=o23,o=p23,p=q23,q=r23,r=s23,s=tt23,t=u23,u=v23,v=w23,w=x23,x=y23,y=z23,z=aa23,aa=ab23,ab=ac23,ac=ad23,ad=ae23,ae=af23,af=ag23,sel=a,out=outh[6]);
+	Mux32Way(a=b24,b=c24,c=d24,d=e24,e=f24,f=g24,g=h24,h=i24,i=j24,j=k24,k=l24,l=m24,m=n24,n=o24,o=p24,p=q24,q=r24,r=s24,s=tt24,t=u24,u=v24,v=w24,w=x24,x=y24,y=z24,z=aa24,aa=ab24,ab=ac24,ac=ad24,ad=ae24,ae=af24,af=ag24,sel=a,out=outh[7]);
+	Mux32Way(a=b25,b=c25,c=d25,d=e25,e=f25,f=g25,g=h25,h=i25,i=j25,j=k25,k=l25,l=m25,m=n25,n=o25,o=p25,p=q25,q=r25,r=s25,s=tt25,t=u25,u=v25,v=w25,w=x25,x=y25,y=z25,z=aa25,aa=ab25,ab=ac25,ac=ad25,ad=ae25,ae=af25,af=ag25,sel=a,out=outh[8]);
+	Mux32Way(a=b26,b=c26,c=d26,d=e26,e=f26,f=g26,g=h26,h=i26,i=j26,j=k26,k=l26,l=m26,m=n26,n=o26,o=p26,p=q26,q=r26,r=s26,s=tt26,t=u26,u=v26,v=w26,w=x26,x=y26,y=z26,z=aa26,aa=ab26,ab=ac26,ac=ad26,ad=ae26,ae=af26,af=ag26,sel=a,out=outh[9]);
+	Mux32Way(a=b27,b=c27,c=d27,d=e27,e=f27,f=g27,g=h27,h=i27,i=j27,j=k27,k=l27,l=m27,m=n27,n=o27,o=p27,p=q27,q=r27,r=s27,s=tt27,t=u27,u=v27,v=w27,w=x27,x=y27,y=z27,z=aa27,aa=ab27,ab=ac27,ac=ad27,ad=ae27,ae=af27,af=ag27,sel=a,out=outh[10]);
+	Mux32Way(a=b28,b=c28,c=d28,d=e28,e=f28,f=g28,g=h28,h=i28,i=j28,j=k28,k=l28,l=m28,m=n28,n=o28,o=p28,p=q28,q=r28,r=s28,s=tt28,t=u28,u=v28,v=w28,w=x28,x=y28,y=z28,z=aa28,aa=ab28,ab=ac28,ac=ad28,ad=ae28,ae=af28,af=ag28,sel=a,out=outh[11]);
+	Mux32Way(a=b29,b=c29,c=d29,d=e29,e=f29,f=g29,g=h29,h=i29,i=j29,j=k29,k=l29,l=m29,m=n29,n=o29,o=p29,p=q29,q=r29,r=s29,s=tt29,t=u29,u=v29,v=w29,w=x29,x=y29,y=z29,z=aa29,aa=ab29,ab=ac29,ac=ad29,ad=ae29,ae=af29,af=ag29,sel=a,out=outh[12]);
+	Mux32Way(a=b30,b=c30,c=d30,d=e30,e=f30,f=g30,g=h30,h=i30,i=j30,j=k30,k=l30,l=m30,m=n30,n=o30,o=p30,p=q30,q=r30,r=s30,s=tt30,t=u30,u=v30,v=w30,w=x30,x=y30,y=z30,z=aa30,aa=ab30,ab=ac30,ac=ad30,ad=ae30,ae=af30,af=ag30,sel=a,out=outh[13]);
+	Mux32Way(a=b31,b=c31,c=d31,d=e31,e=f31,f=g31,g=h31,h=i31,i=j31,j=k31,k=l31,l=m31,m=n31,n=o31,o=p31,p=q31,q=r31,r=s31,s=tt31,t=u31,u=v31,v=w31,w=x31,x=y31,y=z31,z=aa31,aa=ab31,ab=ac31,ac=ad31,ad=ae31,ae=af31,af=ag31,sel=a,out=outh[14]);
+	Mux32Way(a=b32,b=c32,c=d32,d=e32,e=f32,f=g32,g=h32,h=i32,i=j32,j=k32,k=l32,l=m32,m=n32,n=o32,o=p32,p=q32,q=r32,r=s32,s=tt32,t=u32,u=v32,v=w32,w=x32,x=y32,y=z32,z=aa32,aa=ab32,ab=ac32,ac=ad32,ad=ae32,ae=af32,af=ag32,sel=a,out=outh[15]);
+
+}

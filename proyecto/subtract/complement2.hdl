@@ -1,0 +1,50 @@
+
+CHIP complement2 {
+   IN ah[16],al[16];
+   OUT bh[16],bl[16];
+
+   PARTS:
+    	Not16 (
+		in=ah,
+		out[0]=ah0, out[1]=ah1, out[2]=ah2, out[3]=ah3, out[4]=ah4, out[5]=ah5, out[6]=ah6, out[7]=ah7, out[8]=ah8,
+		out[9]=ah9, out[10]=ah10, out[11]=ah11, out[12]=ah12, out[13]=ah13, out[14]=ah14, out[15]=ah15);
+	Not16 (
+		in=al,
+		out[0]=al0, out[1]=al1, out[2]=al2, out[3]=al3, out[4]=al4, out[5]=al5, out[6]=al6, out[7]=al7, out[8]=al8,
+		out[9]=al9, out[10]=al10, out[11]=al11, out[12]=al12, out[13]=al13, out[14]=al14, out[15]=al15);
+
+	HalfAdder(a = al0,	b = true,	sum = bl[0], 	carry = c0);
+	HalfAdder(a = al1, 	b = c0,		sum = bl[1], 	carry = c1);
+	HalfAdder(a = al2, 	b = c1,		sum = bl[2], 	carry = c2);
+	HalfAdder(a = al3, 	b = c2,		sum = bl[3], 	carry = c3);
+	HalfAdder(a = al4, 	b = c3,		sum = bl[4], 	carry = c4);
+	HalfAdder(a = al5,	b = c4,		sum = bl[5], 	carry = c5);
+	HalfAdder(a = al6,	b = c5,		sum = bl[6], 	carry = c6);
+	HalfAdder(a = al7,	b = c6,		sum = bl[7], 	carry = c7);
+	HalfAdder(a = al8, 	b = c7,		sum = bl[8], 	carry = c8);
+	HalfAdder(a = al9, 	b = c8,		sum = bl[9], 	carry = c9);
+	HalfAdder(a = al10, b = c9,		sum = bl[10], 	carry = c10);
+	HalfAdder(a = al11,	b = c10,	sum = bl[11], 	carry = c11);
+	HalfAdder(a = al12, b = c11,	sum = bl[12], 	carry = c12);
+	HalfAdder(a = al13, b = c12,	sum = bl[13], 	carry = c13);
+	HalfAdder(a = al14, b = c13,	sum = bl[14], 	carry = c14);
+	HalfAdder(a = al15,	b = c14,	sum = bl[15], 	carry = c15);
+
+	HalfAdder(a = ah0, 	b = c15, 	sum = bh[0], 	carry = c16);
+	HalfAdder(a = ah1, 	b = c16,	sum = bh[1], 	carry = c17);
+	HalfAdder(a = ah2, 	b = c17,	sum = bh[2], 	carry = c18);
+	HalfAdder(a = ah3, 	b = c18,	sum = bh[3], 	carry = c19);
+	HalfAdder(a = ah4, 	b = c19,	sum = bh[4], 	carry = c20);
+	HalfAdder(a = ah5, 	b = c20,	sum = bh[5], 	carry = c21);
+	HalfAdder(a = ah6, 	b = c21,	sum = bh[6], 	carry = c22);
+	HalfAdder(a = ah7, 	b = c22,	sum = bh[7], 	carry = c23);
+	HalfAdder(a = ah8, 	b = c23,	sum = bh[8], 	carry = c24);
+	HalfAdder(a = ah9, 	b = c24,	sum = bh[9], 	carry = c25);
+	HalfAdder(a = ah10, b = c25,	sum = bh[10], 	carry = c26);
+	HalfAdder(a = ah11, b = c26,	sum = bh[11], 	carry = c27);
+	HalfAdder(a = ah12, b = c27,	sum = bh[12], 	carry = c28);
+	HalfAdder(a = ah13, b = c28,	sum = bh[13], 	carry = c29);
+	HalfAdder(a = ah14, b = c29,	sum = bh[14], 	carry = c30);
+	HalfAdder(a = ah15, b = c30,	sum = bh[15], 	carry = c31);
+}
+}

@@ -1,0 +1,160 @@
+MCD,	Clear
+eval_MCD,	Load	MCD_a
+			Subt	MCD_b
+			Skipcond	400
+			Jump	while_MCD
+			Jump	end_MCD
+			
+while_MCD,	Load	MCD_a
+			Subt	MCD_b
+			Skipcond	800
+			Jump	else_MCD
+			Store	MCD_a
+			Jump	eval_MCD
+			
+else_MCD,	Load	MCD_b
+			Subt	MCD_a
+			Store	MCD_b
+			Jump	eval_MCD
+			
+end_MCD,	Load	MCD_a
+			JumpI	MCD
+
+
+	Input
+	Store	bel
+	Store	MCD_a
+	Input
+	Store	ing
+	Store	MCD_b
+	JnS	MCD
+	Store	MCD_a1
+
+	Input
+	Store	nor
+	Store	MCD_a
+	Input
+	Store	irl
+	Store	MCD_b
+	JnS	MCD
+	Store	MCD_a2
+
+	Input
+	Store	fra
+	
+	Load	MCD_a1
+	Store	MCD_a
+	Load	MCD_a2
+	Store	MCD_b
+	JnS	MCD
+	Store	MCD_a1
+	
+	Load	fra
+	Store	MCD_a
+	Load	MCD_a1
+	Store	MCD_b
+	JnS	MCD
+	Store	MCD_t
+	Output
+
+	Load	total
+	Add	bel
+	Add	ing
+	Add	nor
+	Add	irl
+	Add	fra
+	Store	total
+	
+	Load	MCD_t
+	Store	div_b
+	Load	bel
+	Store	div_a
+	JnS	div
+	Output
+	Load	ZERO
+	Store	div_times
+	
+	Load	ing
+	Store	div_a
+	JnS	div
+	Output
+	Load	ZERO
+	Store	div_times
+	
+	Load	nor
+	Store	div_a
+	JnS	div
+	Output
+	Load	ZERO
+	Store	div_times
+	
+	Load	irl
+	Store	div_a
+	JnS	div
+	Output
+	Load	ZERO
+	Store	div_times
+	
+	Load	fra
+	Store	div_a
+	JnS	div
+	Output
+	Load	ZERO
+	Store	div_times
+
+	Load	total
+	Store	div_a
+	JnS	div
+	Output
+	Halt
+	
+	
+div,	Clear
+loop_div,	Load	div_a
+		Skipcond	800
+		Jump	fix_div
+		Load	div_a
+		Subt	div_b
+		Store	div_a
+		Load	div_times
+		Add	ONE
+		Store	div_times
+		Jump	loop_div
+fix_div,	Load	div_a
+		Skipcond	000
+		Jump	end_div
+		Load	div_times
+		Subt	ONE
+		Store	div_times
+		Load	div_a
+		Add	div_b
+		Store	div_mod
+		Jump	end_div
+end_div,	Load	div_times
+		JumpI	div
+
+
+
+
+
+
+MCD_a,	dec	0
+MCD_b,	dec	0
+
+div_times,	dec	0
+div_a,	dec	0
+div_b,	dec	0
+div_mod,	dec	0
+
+bel,	dec	0
+ing,	dec	0
+nor,	dec	0
+irl,	dec	0
+fra,	dec	0
+total,	dec	0
+
+ONE,	dec	1
+ZERO,	dec	0
+MCD_a1,	dec	0
+MCD_a2,	dec	0
+MCD_t,	dec	0
